@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<link rel="favicon" type="image/ico" href="/favicon.ico" />
 	<title>{$title|default:"puo"}</title>
 	<style type="text/css">
 		body {
