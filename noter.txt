@@ -1,7 +1,0 @@
-20111201
-	Benytter ny skabelon, der passer til mindre skærme.
-	Benytter favicon
-
-# TODO
-	- billedupload/administrering
-	- 
