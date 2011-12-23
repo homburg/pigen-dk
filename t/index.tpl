@@ -2,10 +2,23 @@
 {block "content"}
 <div id="header">&nbsp;</div>
 <div id="joke">
-	<img src="{$panels[1]}" />
+	<img src="{$currentPanel->getUri()}" style="opacity: 0;" />
+	<script type="text/javascript">
+	{literal}
+		$(function _jokeOnLoad() {
+			$("#joke img").animate({opacity:1});
+		});
+	{/literal}
+	</script>
 </div>
 <div id="tools">
-	<a href="/{$panels[0]}">Forrige</a> <a href="/{$panels[2]}">næste</a>
+	{if $previous}
+	<a href="{$previous->getAddress()}"><img alt="forrige" src="/i/left.png" /></a>
+	{/if}
+	{if $next}
+	<a href="{$next->getAddress()}"><img alt="næste" src="/i/right.png" />
+	{/if}
+<div id="facebook-like">{include file="t/c/facebook-like.tpl"}</div></a>
 </div>
 &nbsp;
 {/block}

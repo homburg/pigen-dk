@@ -8,18 +8,18 @@ class IndexPage extends Page
 	protected static function load ($s)
 	{
 		parent::load($s);
-		$upperBound = 199;
-		$lowerBound = 195;
-		$panelId = (int)substr(Server::getUri(),1);
-		if ($panelId < $lowerBound || $panelId >= $upperBound)
-			$panelId = $lowerBound;
+		$panelId = substr(Server::getUri(),1);
 
-		$index = $panelId - $lowerBound;	
-		$max = $upperBound - $lowerBound;
-		$currentPanel = '/panels/PIGEN'.$panelId.'.jpg';
-		$nextPanelId = Util::mod(($index+1), $max) + $lowerBound;
-		$prevPanelId = Util::mod(($index-1), $max) + $lowerBound;
-		$s->assign('panels', array($prevPanelId, $currentPanel, $nextPanelId));
+		$p = Panel::getById($panelId);
+		if (!$p)
+			$p = Panel::getNewest();
+
+		$s->assign('currentPanel', $p);
+
+		$s->assign('next', $p->getNext());
+		$s->assign('previous', $p->getPrevious());
+
+		// $s->assign('debug', $p);
 	}
 }
 
@@ -32,4 +32,3 @@ if (file_exists($filename) && is_file($filename))
 $page = Page::getClass();
 $page::render();
 
-?>

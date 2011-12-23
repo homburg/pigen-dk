@@ -5,3 +5,5 @@
 # TODO
 	- billedupload/administrering
 	- 
+	- Facebook
+		- Prøv at indsætte en facebook like knap

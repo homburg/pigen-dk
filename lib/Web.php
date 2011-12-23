@@ -18,7 +18,9 @@ class Web
 			$smarty->setTemplateDir('t/');
 			$smarty->setCacheDir('/tmp/smarty/cache');
 			$smarty->setCompileDir('/tmp/smarty/compile');
-			$smarty->setConfigDir('/tmp/smarty/configs');
+			$smarty->setConfigDir('t/');
+
+			$smarty->configLoad('puo.conf');
 
 			// $smarty->setCaching(Smarty::CACHING_LIFETIME_CURRENT);
 			self::$smarty = $smarty;

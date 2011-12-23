@@ -5,6 +5,7 @@
 	<title>{$title|default:"puo"}</title>
 	<link rel="favicon" type="image/ico" href="/favicon.ico" />
 	<link rel="stylesheet" href="/css/style.css" type="text/css" />
+	<script type="text/javascript" src="//code.jquery.com/jquery-latest.js" ></script>
 </head>
 <body>
 	<div id="container">
