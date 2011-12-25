@@ -15,6 +15,7 @@
 	{if $previous}
 	<a href="{$previous->getAddress()}"><img alt="forrige" src="/i/left.png" /></a>
 	{/if}
+<a href="/galleri" alt="galleri"><img src="/i/gallery.png" alt="galleri" /></a>
 	{if $next}
 	<a href="{$next->getAddress()}"><img alt="næste" src="/i/right.png" />
 	{/if}
