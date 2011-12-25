@@ -2,6 +2,9 @@
 
 class Web
 {
+	const REDIRECT_TEMPORARY = 302;
+	const REDIRECT_PERMANENT = 301;
+
 	private static $smarty;
 
 	public static function getUri ()
@@ -22,11 +25,36 @@ class Web
 
 			$smarty->configLoad('puo.conf');
 
-			// $smarty->setCaching(Smarty::CACHING_LIFETIME_CURRENT);
+			if (Server::isDevelopment())
+			{
+				$smarty->setCaching(Smarty::CACHING_OFF);
+				$smarty->setDebuggingCtrl('URL');
+			}
+			else
+				$smarty->setCaching(Smarty::CACHING_LIFETIME_CURRENT);
+
 			self::$smarty = $smarty;
 		}
 		return self::$smarty;
 	}
+
+	/**
+	 * Redirect and stop output
+	 *
+	 * @param string $url
+	 * @param int $type Redirect type, see self::REDIRECT_*
+	 */
+	public static function redirect ($url, $type = self::REDIRECT_TEMPORARY)
+	{
+		if ($type === self::REDIRECT_PERMANENT)
+			header('Status: 301 Permanent');
+
+		header('Location: '.$url);
+		exit();
+
+		// TODO: javascript?
+	}
+
 }
 
 ?>
