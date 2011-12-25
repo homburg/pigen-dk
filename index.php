@@ -8,11 +8,18 @@ class IndexPage extends Page
 	protected static function load ($s)
 	{
 		parent::load($s);
-		$panelId = substr(Server::getUri(),1);
+		$panelId = substr(Server::getUri(true),1);
 
-		$p = Panel::getById($panelId);
-		if (!$p)
+		if ($panelId == "")
 			$p = Panel::getNewest();
+		else
+			$p = Panel::getById($panelId);
+
+		if (!$p)
+		{
+			Web::redirect('/');
+			// $p = Panel::getNewest();
+		}
 
 		$s->assign('currentPanel', $p);
 
