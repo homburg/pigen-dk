@@ -3,7 +3,7 @@
 error_reporting(E_ALL);
 
 set_include_path(get_include_path().PATH_SEPARATOR.__DIR__);
-require_once('smarty/Smarty.class.php');
+require_once('Smarty.class.php');
 
 function __autoload ($classname)
 {
