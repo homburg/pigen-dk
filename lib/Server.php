@@ -2,6 +2,8 @@
 
 class Server
 {
+	const HOSTNAME_DEVELOPMENT = 'gravko';
+
 	public static function __callStatic($method, $args)
 	{
 		$method = substr($method, 3);
@@ -12,9 +14,25 @@ class Server
 		return $_SERVER[$method];
 	}
 
-	public static function getUri ()
+	/**
+	 * Determine whether we are on the development server
+	 * @return bool
+	 */
+	public static function isDevelopment ()
 	{
-		return self::getRequestUri();
+		return gethostname() === self::HOSTNAME_DEVELOPMENT;
+	}
+
+	/**
+	 * @param bool $noGetParameters Do not include get parameters
+	 */
+	public static function getUri ($noGetParameters = false)
+	{
+		$uri = self::getRequestUri();
+		if ($noGetParameters)
+			$uri = preg_replace('/\?.*/', '', $uri);
+
+		return $uri;
 	}
 }
 
