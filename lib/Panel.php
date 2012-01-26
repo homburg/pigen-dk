@@ -19,6 +19,7 @@ class Panel
 	protected $prevPanel;
 
 	protected static $list;
+	protected static $panels;
 
 	/**
 	 * @param string $id
@@ -34,6 +35,29 @@ class Panel
 	public function getId()
 	{
 		return $this->id;
+	}
+
+	/**
+	 * Get title
+	 *
+	 * @return string $title
+	 */
+	public function getTitle ()
+	{
+		if ('' == $this->title)
+			return str_replace('_', ' ', $this->id);
+		else
+			return $this->title;
+	}
+
+	/**
+	 * Get thumbnail url
+	 *
+	 * @return string Thumnail url
+	 */
+	public function getThumbnailUri ()
+	{
+		return self::BASENAME.'thumbnails/'.$this->getId().'.jpg';
 	}
 
 	/**
@@ -53,6 +77,24 @@ class Panel
 			sort(self::$list);
 		}
 		return self::$list;
+	}
+
+	/**
+	 * Get all panels or an interval
+	 *
+	 * @param int $start Index of first panel
+	 * @param int $end Number of panels
+	 */
+	public static function getAll($start = 0, $number = 0)
+	{
+		if ($number > 0)
+			$panelIds = array_slice(self::getList(), $start, $number);
+		else
+			$panelIds = self::getList();
+
+		return array_map(function ($item) {
+				return Panel::getById($item);
+		}, $panelIds);
 	}
 
 	/**

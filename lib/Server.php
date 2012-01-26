@@ -34,6 +34,19 @@ class Server
 
 		return $uri;
 	}
+
+	/**
+	 * Get uri segment by index
+	 *
+	 * @param int $index Index
+	 * @return string
+	 */
+	public static function getUriSegment ($index)
+	{
+		$segments = explode('/', Server::getUri(true));
+		array_shift($segments);
+		return @$segments[$index];
+	}
 }
 
 ?>

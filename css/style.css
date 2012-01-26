@@ -1,34 +1,99 @@
+/* line 8, pigen/sass/style.scss */
+.hide {
+  display: none;
+}
+
+/* line 12, pigen/sass/style.scss */
 body {
-	font-family: monospace, sans;
+  font-family: monospace, sans;
 }
+
+/* line 15, pigen/sass/style.scss */
 div#container {
-	margin: 0px auto;
-	background-image: url('/i/background.jpg');
-	box-sizing: border-box;
-	width: 751px;
-	min-height: 1350px;
+  margin: 0px auto;
+  background-image: url("/i/background.jpg");
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  width: 751px;
+  min-height: 1000px;
+  margin-top: 10px;
 }
+
+/* line 24, pigen/sass/style.scss */
 div#header {
-	height: 148px;
-	margin-bottom: 31px;
-	margin-top: 10px;
+  height: 148px;
+  margin-bottom: 31px;
+  margin-top: 0px;
 }
+
+/* line 29, pigen/sass/style.scss */
 div#joke {
-	height: 465px;
-	margin: 0px 204px 0px 187px;
-	margin-bottom: 15px;
-	padding-top: 4px;
-	text-align: center;
+  height: 465px;
+  margin: 0px 204px 0px 187px;
+  margin-bottom: 15px;
+  padding-top: 4px;
+  text-align: center;
 }
+
+/* line 36, pigen/sass/style.scss */
 div#tools {
-	height: 100%;
-	padding-top: 8px;
-	text-align: center;
+  height: 100%;
+  padding-top: 8px;
+  text-align: center;
 }
+
+/* line 41, pigen/sass/style.scss */
 a {
-	text-decoration: none;
-	color: black;
+  text-decoration: none;
+  color: black;
 }
+
+/* line 45, pigen/sass/style.scss */
 div {
-	margin: 0px;
+  margin: 0px;
+}
+
+/* line 49, pigen/sass/style.scss */
+#comments {
+  width: 500px;
+  margin: 0px auto;
+}
+
+/* line 55, pigen/sass/style.scss */
+body.gallery div#container {
+  background-image: url(/i/background-gallery.jpg);
+  background-position: 7px 0px;
+}
+
+/* line 59, pigen/sass/style.scss */
+div#gallery {
+  text-align: center;
+  margin: 0px auto;
+  width: 563px;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+/* line 66, pigen/sass/style.scss */
+div.gallery-part {
+  overflow: hidden;
+}
+
+/* line 69, pigen/sass/style.scss */
+div.gallery-item {
+  padding: 5px;
+  border: solid 1px gray;
+  margin: 5px;
+  float: left;
+  background: white;
+}
+
+/* line 77, pigen/sass/style.scss */
+body.gallery div#header {
+  height: 148px;
+}
+
+/* line 80, pigen/sass/style.scss */
+body.gallery div#container {
+  min-height: 1000px;
 }

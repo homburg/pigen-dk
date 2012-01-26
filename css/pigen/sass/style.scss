@@ -1,0 +1,87 @@
+@import "compass/css3";
+
+$containerHeight: 751px;
+$headerHeight: 148px;
+$jokeHeight: 465px;
+$fullMinHeight: $containerHeight + $headerHeight + $jokeHeight;
+
+.hide {
+	display: none;
+}
+
+body {
+	font-family: monospace, sans;
+}
+div#container {
+	margin: 0px auto;
+	background-image: url('/i/background.jpg');
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+	width: 751px;
+	min-height: 1000px;
+	margin-top: 10px;
+}
+div#header {
+	height: 148px;
+	margin-bottom: 31px;
+	margin-top: 0px;
+}
+div#joke {
+	height: 465px;
+	margin: 0px 204px 0px 187px;
+	margin-bottom: 15px;
+	padding-top: 4px;
+	text-align: center;
+}
+div#tools {
+	height: 100%;
+	padding-top: 8px;
+	text-align: center;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+div {
+	margin: 0px;
+}
+
+#comments {
+	width: 500px;
+	margin: 0px auto;
+}
+
+// Galleri
+body.gallery div#container {
+	background-image: url(/i/background-gallery.jpg);
+	background-position: 7px 0px;
+}
+div#gallery {
+	text-align: center;
+	margin: 0px auto;
+	width: 563px;
+	overflow: hidden;
+	padding-bottom: 20px;
+}
+div.gallery-part {
+	overflow: hidden;
+}
+div.gallery-item {
+	padding: 5px;
+	border: solid 1px gray;
+	margin: 5px;
+	float: left;
+	background:white;
+	// @include box-shadow(#333 2px);
+}
+body.gallery div#header {
+	height: 148px;
+}
+body.gallery div#container {
+	min-height: 1000px;
+}
+// #infscr-loading {
+// 	position: absolute;
+// 	left: -9999px;
+// 	top: -9999px;
+// }

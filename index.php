@@ -22,6 +22,7 @@ class IndexPage extends Page
 		}
 
 		$s->assign('currentPanel', $p);
+		$s->assign('p', $p);
 
 		$s->assign('next', $p->getNext());
 		$s->assign('previous', $p->getPrevious());
@@ -32,7 +33,7 @@ class IndexPage extends Page
 
 Page::setClass('IndexPage');
 
-$filename = Server::getDocumentRoot().Server::getRequestUri().'.php';
+$filename = Server::getDocumentRoot().'/'.Server::getUriSegment(0).'.php';
 if (file_exists($filename) && is_file($filename))
 	require_once($filename);
 

@@ -25,6 +25,8 @@ class Web
 
 			$smarty->configLoad('puo.conf');
 
+			$smarty->registerClass('Web', 'Web');
+
 			if (Server::isDevelopment())
 			{
 				$smarty->setCaching(Smarty::CACHING_OFF);
@@ -55,6 +57,24 @@ class Web
 		// TODO: javascript?
 	}
 
+	/**
+	 * Get domain
+	 *
+	 * @return string
+	 */
+	public static function getDomain ()
+	{
+		if (Server::isDevelopment())
+			return 'test.pigen.dk';
+		else
+			return 'www.pigen.dk';
+	}
+
+	public static function error404 ()
+	{
+		header('Status: 404 Not Found');
+		exit();
+	}
 }
 
 ?>

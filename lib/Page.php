@@ -3,10 +3,13 @@
 class Page implements iPage
 {
 	protected static $class;
+	protected static $title;
+	protected static $id;
 
 	protected static function load ($s)
 	{
 		$s->assign('title', static::$title);
+		$s->assign('id', static::$id);
 	}
 
 	public static function render ()
@@ -28,5 +31,3 @@ class Page implements iPage
 			return __CLASS__;
 	}
 }
-
-?>
