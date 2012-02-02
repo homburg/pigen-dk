@@ -31,7 +31,7 @@ class GalleryPage extends Page
 		if ($start > $count-1)
 			Web::error404();	
 
-		$panels = Panel::getAll($start, $ppp);
+		$panels = Panel::getAll($start, $ppp, Panel::ORDER_DESC);
 		$s->assign('panels', $panels);
 		$s->assign('page', $p);
 		$s->assign('ppp', $ppp);

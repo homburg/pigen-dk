@@ -6,6 +6,9 @@ class Panel
 	const BASENAME = '/panels/';
 	const FILETYPE_IMAGE_JPEG = 'image/jpeg';
 
+	const ORDER_ASC = 'asc';
+	const ORDER_DESC = 'desc';
+
 	/**
 	 * @var string $id Unique name, matches (part of) filename
 	 */
@@ -19,6 +22,7 @@ class Panel
 	protected $prevPanel;
 
 	protected static $list;
+	protected static $descList;
 	protected static $panels;
 
 	/**
@@ -42,12 +46,17 @@ class Panel
 	 *
 	 * @return string $title
 	 */
-	public function getTitle ()
+	public function getTitle ($includeSiteName = false)
 	{
 		if ('' == $this->title)
-			return str_replace('_', ' ', $this->id);
+			$str = str_replace('_', ' ', $this->id);
 		else
-			return $this->title;
+			$str = $this->title;
+
+		if ($includeSiteName)
+			return $str . " - Pigen uden ordforråd";
+		else
+			return $str;
 	}
 
 	/**
@@ -61,9 +70,10 @@ class Panel
 	}
 
 	/**
-	 * @return 
+	 * @param self::ORDER_* $order
+	 * @return int[]
 	 */
-	public static function getList ()
+	public static function getList ($order = self::ORDER_ASC)
 	{
 		if (!is_array(self::$list))
 		{
@@ -76,7 +86,16 @@ class Panel
 
 			sort(self::$list);
 		}
-		return self::$list;
+
+		if ($order === self::ORDER_DESC)
+		{
+			if (!is_array(self::$descList))
+				self::$descList = array_reverse(self::$list);
+
+			return self::$descList;
+		}
+		else
+			return self::$list;
 	}
 
 	/**
@@ -84,13 +103,15 @@ class Panel
 	 *
 	 * @param int $start Index of first panel
 	 * @param int $end Number of panels
+	 * @param self::ORDER_* $asc Order
 	 */
-	public static function getAll($start = 0, $number = 0)
+	public static function getAll($start = 0, $number = 0, $order = self::ORDER_ASC)
 	{
+		$panelIds = self::getList($order);
 		if ($number > 0)
-			$panelIds = array_slice(self::getList(), $start, $number);
+			$panelIds = array_slice($panelIds, $start, $number);
 		else
-			$panelIds = self::getList();
+			$panelIds = $panelIds;
 
 		return array_map(function ($item) {
 				return Panel::getById($item);
@@ -215,9 +236,12 @@ class Panel
 		return $this->id . $this->getExtension();
 	}
 
-	public function getAddress ()
+	public function getAddress ($full = true)
 	{
-		return $this->id;
+		if (!$full)
+			return $this->id;
+		else
+			return 'http://'.Web::getDomain().'/'.$this->id;
 	}
 
 	/**
