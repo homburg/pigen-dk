@@ -12,6 +12,11 @@ class Web
 		return $_SERVER['REQUEST_URI'];
 	}
 
+	public static function urlEncode($str)
+	{
+		return rawurlencode($str);
+	}
+
 	public static function getSmarty()
 	{
 		if (self::$smarty === null)
@@ -26,6 +31,7 @@ class Web
 			$smarty->configLoad('puo.conf');
 
 			$smarty->registerClass('Web', 'Web');
+			$smarty->registerClass('Site', 'Site');
 
 			if (Server::isDevelopment())
 			{

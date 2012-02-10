@@ -26,17 +26,18 @@ if !console?
 
 class Panel
 	@init: ->
-		$("#load-container").hide() if location.hash != ""
+		if location.hash != ""
+			for name, selector in Panel.loadContainers
+				$("##{name}").hide()
 		# Overloading default navigation link
-		$("#tools a.softlink").live 'click', (event) ->
-			id = $(this).attr 'href'
+		$("a.softlink").live 'click', (event) ->
+			id = $(this).attr('href').replace /.*\//,""
 			document.location.href = "/#/#{id}"
 			event.preventDefault()
 			false
 		$(window).bind 'hashchange', (event) ->
 			fragment = $.param.fragment()
 			return if location.hash == ""
-			console.log "Loading fragment #{fragment[1..]}"
 			Panel.load fragment[1..]
 		return if location.hash == ""
 		fragment = location.hash
@@ -46,8 +47,6 @@ class Panel
 	@fadeTo: (uri) ->
 		$("#joke img")
 			.fadeOut null, ->
-				console.log this
-				console.log uri
 				i = $(this)
 				i.attr "src", "/panels/#{uri}.jpg"
 				i.fadeIn "slow"
@@ -55,10 +54,11 @@ class Panel
 	# TODO: 404?
 	@load: (id) ->
 		$("#load-container").fadeOut null, ->
-			$("#load-container").load "/#{id} #load-container > div", ->
+			$("#load-container").load "/#{id} #load-container > *", ->
 				$("#load-container").fadeIn()
+				# Disqus
+				window.d.reload "http://"+window.location.hostname+"/#{id}"
+	
+	@loadContainers: {"load-container": "load-container", }
 
 Panel.init()
-# Panel.fadeTo "195"
-# Panel.fadeTo "PIGEN197"
-# Panel.load "PIGEN197"

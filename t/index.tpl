@@ -1,25 +1,43 @@
 {extends "master.tpl"}
 {block name="head" append}
-	<meta property="og:title" content="Pigen uden ordforråd - {$p->getTitle()}"/>
+	<meta property="og:title" content="{Site::getTitle()} - {$p->getTitle()}"/>
 {/block}
 {block "content"}
 	<div id="load-container">
-		<div id="header">&nbsp;</div>
+		<a href="http://{Web::getDomain()}/" "{Site::getTitle()}"><div id="header">&nbsp;</div></a>
 		<div id="joke">
+		{if $next}
+			<a href="{$next->getAddress(false)}" class="softlink">
+				<img src="{$p->getUri()}" />
+			</a>
+		{else}
 			<img src="{$p->getUri()}" />
+		{/if}
 		</div>
 		<div id="tools">
-			{if $previous}
-			<a href="{$previous->getAddress()}" class="softlink"><img alt="forrige" src="/i/left.png" /></a>
-			{/if}
-			<a href="/galleri" alt="galleri"><img src="/i/gallery.gif" alt="galleri" /></a>
-			{if $next}
-			<a href="{$next->getAddress()}" class="softlink"><img alt="næste" src="/i/right.png" /></a>
-			{/if}
-			<div id="facebook-like">{include file="t/c/facebook-like.tpl"}</div>
-			<div id="comments">{include file="t/c/disqus.tpl"}</div>
+			<div id="share-left" class="left">
+				<div id="facebook-share">{include file="t/c/facebook-share.tpl"}</div>
+				<div id="twitter-share">{include file="t/c/twitter-share.tpl"}</div>
+			</div>
+			<div id="share-right" class="right">
+				<div><a href="/galleri" alt="galleri"><img src="/i/gallery.gif" alt="galleri" /></a></div>
+				<div style="width: 7px;">&nbsp;</div>
+			</div>
+			<div id="navigation">
+				{if $previous}
+				<a id="prev" href="{$previous->getAddress(false)}" class="softlink"><img alt="forrige" src="/i/left.png" /></a>
+				{/if}
+				{if $next}
+				<a id="next" href="{$next->getAddress(false)}" class="softlink"><img alt="næste" src="/i/right.png" /></a>
+				{/if}
+			</div>
 		</div>
-	</div>
+		<div id="bottom">
+			<div id="comments">{include file="t/c/disqus.tpl"}</div>
+			<div id="footer"><p><a href="http://theismadsen.dk" alt="theismadsen.dk">{Site::getTitle()} 2005 - 2012 · Tegnet af Theis Vallø Madsen</a></p></div>
+		</div>
+	</div> {* load-container *}
 <script type="text/javascript" src="/js/panel.js"></script>
-&nbsp;
+<script type="text/javascript" src="/js/nav.js"></script>
 {/block}
+{* Rename to panel.tpl *}

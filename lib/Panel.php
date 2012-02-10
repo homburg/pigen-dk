@@ -239,7 +239,7 @@ class Panel
 	public function getAddress ($full = true)
 	{
 		if (!$full)
-			return $this->id;
+			return '/'.$this->id;
 		else
 			return 'http://'.Web::getDomain().'/'.$this->id;
 	}

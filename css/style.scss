@@ -38,14 +38,23 @@ div#joke {
 	text-align: center;
 }
 div#tools {
+	> #navigation {
+		text-align: center;
+		margin: 0px auto;
+	}
+	> * {
+	}
 	margin-left: 181px;
 	margin-right: 197px;
 	// margin-top: 36px;
 	height: 100%;
 	padding-top: 8px;
-	text-align: center;
 	overflow: hidden;
 	#share-left {
+		> div { text-align: left; }
+	}
+	#share-left, #share-right {
+		// > div { vertical-align: top; }
 	}
 }
 a {
@@ -65,6 +74,7 @@ div {
 #comments {
 	width: 436px;
 	margin: 0px auto;
+	margin-top: 71px;
 	padding-right: 55px;
 	#disqus_thread {
 		margin: 9px auto;
@@ -90,7 +100,7 @@ div {
 	// background-image: url(/i/background.jpg);
 	// background-position: bottom;
 	padding-top: 10px;
-	// padding-bottom: 30px;
+	padding-bottom: 20px;
 	* {
 			font-family: $fontFamily;
 			font-size: 9pt;
@@ -99,6 +109,10 @@ div {
 			text-decoration: none;
 	}
 }
+
+#bottom {
+		background-image: url(/i/background-loop.jpg);
+	}
 
 // Galleri
 body.gallery div#container {

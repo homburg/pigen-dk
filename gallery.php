@@ -17,7 +17,7 @@ class GalleryPage extends Page
 		}
 		else
 		{
-			$ppp = 16;
+			$ppp = 24;
 			$p = Server::getUriSegment(1);
 		}
 
@@ -29,7 +29,7 @@ class GalleryPage extends Page
 		$count = count(Panel::getList());
 		$start = ($p-1) * $ppp;
 		if ($start > $count-1)
-			Web::error404();	
+			Web::error404();
 
 		$panels = Panel::getAll($start, $ppp, Panel::ORDER_DESC);
 		$s->assign('panels', $panels);

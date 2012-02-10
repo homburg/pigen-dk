@@ -22,4 +22,3 @@ class Disqus
 if !window?.d
 	window.d = new Disqus 'puopuo'
 	window.d.load()
-	console.log(window.d)

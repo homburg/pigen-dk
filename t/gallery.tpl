@@ -1,7 +1,7 @@
 {extends "master.tpl"}
 {block "content"}
 <script src="//code.homburg.dk/jquery.infinitescroll.js" type="text/javascript"></script>
-<div id="header">&nbsp;</div>
+<a href="http://{Web::getDomain()}/" alt="Pigen uden ordforråd"><div id="header">&nbsp;</div></a>
 <div id="gallery">
 	<div class="gallery-part" id="gallery-part-{$page}">
 	{foreach $panels as $p}
@@ -19,8 +19,6 @@
 		<a {if $i == 2}class="next"{/if} href="/galleri/{$i}" alt="Side {$i}" >{$i}</a>
 	{/for}
 	</div>
-</div>
-<div id="tools">
 </div>
 &nbsp;
 <script src="/js/gallery.js" type="text/javascript"></script>

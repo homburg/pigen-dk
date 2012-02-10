@@ -34,8 +34,9 @@
 
   })();
 
-  window.d = new Disqus('puopuo');
-
-  window.d.load();
+  if (!(typeof window !== "undefined" && window !== null ? window.d : void 0)) {
+    window.d = new Disqus('puopuo');
+    window.d.load();
+  }
 
 }).call(this);
