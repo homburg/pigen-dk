@@ -39,7 +39,10 @@ class Web
 				$smarty->setDebuggingCtrl('URL');
 			}
 			else
-				$smarty->setCaching(Smarty::CACHING_LIFETIME_CURRENT);
+			{
+				// $smarty->setCaching(Smarty::CACHING_LIFETIME_CURRENT);
+				$smarty->setCaching(Smarty::CACHING_OFF);
+			}
 
 			self::$smarty = $smarty;
 		}
