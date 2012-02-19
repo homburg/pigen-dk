@@ -188,7 +188,7 @@ class Panel
 
 		$data = $panel->getData();
 		$panel->caption = @$data['caption'];
-		$panel->title = @$data['titlë́'];
+		$panel->title = @$data['title'];
 		return $panel;
 	}
 

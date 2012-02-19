@@ -74,7 +74,11 @@ class Web
 	public static function getDomain ()
 	{
 		if (Server::isDevelopment())
+		{
+			// TODO: Set dns test.pigen.dk to development server
+			return Server::getHttpHost();
 			return 'test.pigen.dk';
+		}
 		else
 			return 'www.pigen.dk';
 	}
