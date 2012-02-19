@@ -1,5 +1,5 @@
 (function() {
-  var Panel, console;
+  var Panel, console, l;
 
   if (!(typeof console !== "undefined" && console !== null)) {
     console = {
@@ -29,13 +29,15 @@
     };
   }
 
+  l = window.location;
+
   Panel = (function() {
 
     function Panel() {}
 
     Panel.init = function() {
       var fragment, name, selector, _len, _ref;
-      if (location.hash !== "") {
+      if (l.hash !== "") {
         _ref = Panel.loadContainers;
         for (selector = 0, _len = _ref.length; selector < _len; selector++) {
           name = _ref[selector];
@@ -45,20 +47,20 @@
       $("a.softlink").live('click', function(event) {
         var id;
         id = $(this).attr('href').replace(/.*\//, "");
-        document.location.href = "/#/" + id;
+        l.href = "/#/" + id;
         event.preventDefault();
         return false;
       });
       $(window).bind('hashchange', function(event) {
         var fragment;
         fragment = $.param.fragment();
-        if (location.hash === "") return;
+        if (l.hash === "") return;
         return Panel.load(fragment.slice(1));
       });
-      if (location.hash === "") return;
-      fragment = location.hash;
-      location.hash = "";
-      return location.hash = fragment;
+      if (l.hash === "") return;
+      fragment = l.hash;
+      l.hash = "";
+      return l.hash = fragment;
     };
 
     Panel.fadeTo = function(uri) {
@@ -74,7 +76,7 @@
       return $("#load-container").fadeOut(null, function() {
         return $("#load-container").load("/" + id + " #load-container > *", function() {
           $("#load-container").fadeIn();
-          return window.d.reload("http://" + window.location.hostname + ("/" + id));
+          return window.d.reload("http://" + l.hostname + ("/" + id));
         });
       });
     };

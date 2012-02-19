@@ -1,6 +1,9 @@
 {extends "master.tpl"}
 {block name="head" append}
-	<meta property="og:title" content="{Site::getTitle()} - {$p->getTitle()}"/>
+	<meta property="og:title" content="{$p->getTitle(true)}" />
+	<meta property="og:image" content="http://{Web::getDomain()}/{$p->getUri()}" />
+	<meta property="og:url" content="{$p->getAddress()}" />
+	<meta property="og:type" content="article" />
 {/block}
 {block "content"}
 	<div id="load-container">
@@ -34,7 +37,11 @@
 		</div>
 		<div id="bottom">
 			<div id="comments">{include file="t/c/disqus.tpl"}</div>
-			<div id="footer"><p><a href="http://theismadsen.dk" alt="theismadsen.dk">{Site::getTitle()} 2005 - 2012 · Tegnet af Theis Vallø Madsen</a></p></div>
+			<div id="footer">
+				<p><a href="http://theismadsen.dk" alt="theismadsen.dk">{Site::getTitle()} 2005 - 2012 · Tegnet af Theis Vallø Madsen</a>
+				{if Server::isDevelopment()}<br /><span style="font-weight: bold;">Udvikling</span>{/if}
+				</p>
+			</div>
 		</div>
 	</div> {* load-container *}
 <script type="text/javascript" src="/js/panel.js"></script>

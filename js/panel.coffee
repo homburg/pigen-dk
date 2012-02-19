@@ -24,25 +24,27 @@ if !console?
 		markTimeline: ->
 		memory: ->
 
+l = window.location
+
 class Panel
 	@init: ->
-		if location.hash != ""
+		if l.hash != ""
 			for name, selector in Panel.loadContainers
 				$("##{name}").hide()
 		# Overloading default navigation link
 		$("a.softlink").live 'click', (event) ->
 			id = $(this).attr('href').replace /.*\//,""
-			document.location.href = "/#/#{id}"
+			l.href = "/#/#{id}"
 			event.preventDefault()
 			false
 		$(window).bind 'hashchange', (event) ->
 			fragment = $.param.fragment()
-			return if location.hash == ""
+			return if l.hash == ""
 			Panel.load fragment[1..]
-		return if location.hash == ""
-		fragment = location.hash
-		location.hash = ""
-		location.hash = fragment
+		return if l.hash == ""
+		fragment = l.hash
+		l.hash = ""
+		l.hash = fragment
 	
 	@fadeTo: (uri) ->
 		$("#joke img")
@@ -57,7 +59,7 @@ class Panel
 			$("#load-container").load "/#{id} #load-container > *", ->
 				$("#load-container").fadeIn()
 				# Disqus
-				window.d.reload "http://"+window.location.hostname+"/#{id}"
+				window.d.reload "http://"+l.hostname+"/#{id}"
 	
 	@loadContainers: {"load-container": "load-container", }
 
