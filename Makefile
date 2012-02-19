@@ -1,11 +1,16 @@
-.PHONY: all css thumbnails
+.PHONY: all css thumbnails js
 
+all: css thumbnails js
 
-all: css
+thumbnails:
+	cd panels; $(MAKE) $(MFLAGS)
 
 css:
-	compass compile css/pigen
+	cd css; $(MAKE) $(MFLAGS)
 
-thumbnails: panels/*.jpg
-	$(foreach FILE, $?, $(shell puo_generate_thumbnails.sh $(FILE)))
+coffee: js/*.js
+	
+js: coffee
 
+%.js: %.coffee
+	coffee -c $<
