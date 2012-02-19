@@ -34,4 +34,6 @@
 
   })();
 
+  window.Disqus = Disqus;
+
 }).call(this);

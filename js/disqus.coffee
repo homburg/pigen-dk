@@ -19,6 +19,7 @@ class Disqus
 		@unload()
 		@load(url)
 
+window.Disqus = Disqus
 # if !window?.d
 # 	window.d = new Disqus 'puopuo'
 # 	window.d.load()
