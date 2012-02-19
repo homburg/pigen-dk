@@ -247,8 +247,11 @@ class Panel
 	/**
 	 * @return string 
 	 */
-	public function getUri()
+	public function getUri($full = false)
 	{
-		return self::BASENAME . $this->getFilename();
+		if (!$full)
+			return self::BASENAME . $this->getFilename();
+		else
+			return 'http://'.Web::getDomain().self::BASENAME.$this->getFilename();
 	}
 }
