@@ -23,6 +23,7 @@ class IndexPage extends Page
 
 		$s->assign('currentPanel', $p);
 		$s->assign('p', $p);
+		$s->assign('title', $p->getTitle(true));
 
 		$s->assign('next', $p->getNext());
 		$s->assign('previous', $p->getPrevious());
