@@ -1,7 +1,7 @@
 {extends "master.tpl"}
 {block name="head" append}
 	<meta property="og:title" content="{$p->getTitle(true)}" />
-	<meta property="og:image" content="http://{Web::getDomain()}/{$p->getUri()}" />
+	<meta property="og:image" content="{$p->getUri(true)}" />
 	<meta property="og:url" content="{$p->getAddress()}" />
 	<meta property="og:type" content="article" />
 {/block}
