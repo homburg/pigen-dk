@@ -75,9 +75,24 @@ div {
 	width: 436px;
 	margin: 0px auto;
 	margin-top: 71px;
-	padding-right: 55px;
 	#disqus_thread {
 		margin: 9px auto;
+
+		> #dsq-content {
+			padding-right: 55px;
+		}
+		// mobile
+		> #dsq-content.dsq-mobile {
+			padding-right: 0px;
+			// padding-left: 30px;
+			background: none !important;
+			> #dsq-topwrapper {
+				display: none;
+			}
+			> #dsq-comments {
+				background: none !important;
+			}
+		}
 	}
 	* {
 		font-family: $fontFamily;
