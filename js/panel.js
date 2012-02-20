@@ -76,7 +76,7 @@
       return $("#load-container").fadeOut(null, function() {
         return $("#load-container").load("/" + id + " #load-container > *", function() {
           $("#load-container").fadeIn();
-          return window.d.reload("http://" + l.hostname + ("/" + id));
+          return window.d.reload();
         });
       });
     };

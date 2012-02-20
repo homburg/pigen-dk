@@ -15,7 +15,7 @@
 
     Disqus.prototype.load = function(url) {
       if (url == null) url = null;
-      window.disqus_url = url;
+      this.url = window.disqus_url = url;
       return $('head').append(this.dsq);
     };
 
@@ -25,7 +25,7 @@
     };
 
     Disqus.prototype.reload = function(url) {
-      if (url == null) url = none;
+      if (url == null) url = this.url;
       this.unload();
       return this.load(url);
     };

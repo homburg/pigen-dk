@@ -8,18 +8,19 @@ class Disqus
 			'src': "http://#{shortname}.disqus.com/embed.js"
 	
 	load: (url = null) ->
-		window.disqus_url = url
+		@url = window.disqus_url = url
 		$('head').append(@dsq)
 
 	unload: ->
 		$(@dsq).remove()
 		$("#disqus_thread").empty()
 
-	reload: (url = none) ->
+	reload: (url = @url) ->
 		@unload()
 		@load(url)
 
 window.Disqus = Disqus
 # if !window?.d
 # 	window.d = new Disqus 'puopuo'
+#	fisk
 # 	window.d.load()

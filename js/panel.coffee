@@ -59,7 +59,7 @@ class Panel
 			$("#load-container").load "/#{id} #load-container > *", ->
 				$("#load-container").fadeIn()
 				# Disqus
-				window.d.reload "http://"+l.hostname+"/#{id}"
+				window.d.reload()
 	
 	@loadContainers: {"load-container": "load-container", }
 
