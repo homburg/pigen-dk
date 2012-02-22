@@ -75,6 +75,9 @@
     Panel.load = function(id) {
       return $("#load-container").fadeOut(null, function() {
         return $("#load-container").load("/" + id + " #load-container > *", function() {
+          if (typeof _gaq !== "undefined" && _gaq !== null) {
+            _gaq.push(['_trackPageview', "/" + id]);
+          }
           $("#load-container").fadeIn();
           return window.d.reload();
         });

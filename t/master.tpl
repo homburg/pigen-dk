@@ -12,6 +12,7 @@
 	<script type="text/javascript" src="//code.jquery.com/jquery-latest.js" ></script>
 <script type="text/javascript" src="//code.jquery.com/ui/1.8.17/jquery-ui.js"></script>
 <script type="text/javascript" src="//code.homburg.dk/jquery.ba-bbq.js"></script>
+	{include file="t/c/ga.tpl"}
 	{/block}
 </head>
 <body class="{$id|default:""}">

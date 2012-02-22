@@ -57,6 +57,8 @@ class Panel
 	@load: (id) ->
 		$("#load-container").fadeOut null, ->
 			$("#load-container").load "/#{id} #load-container > *", ->
+				# TODO: event pattern
+				_gaq.push ['_trackPageview', "/#{id}"] if _gaq?
 				$("#load-container").fadeIn()
 				# Disqus
 				window.d.reload()
