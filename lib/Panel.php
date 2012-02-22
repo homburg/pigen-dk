@@ -208,7 +208,7 @@ class Panel
 			return false;;
 		}
 
-		if (!is_array($data) || !isset($data['caption']) || !isset($data['title']))
+		if (!is_array($data))
 		{
 			Debug::log($data, 'Invalid image data');
 			return false;
