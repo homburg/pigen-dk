@@ -1,4 +1,4 @@
-.PHONY: all css clean clean-yaml clean-thumbnails
+.PHONY: all css clean clean-yaml clean-thumbnails js-timestamp
 
 PANELS = $(wildcard panels/*.jpg)
 THUMBNAILS = $(patsubst panels/%,panels/thumbnails/%,$(PANELS))
@@ -32,8 +32,12 @@ coffee: js/*.js
 	
 js: coffee
 
+js-timestamp:
+	stat --printf="js_timestamp=\"%y\"" js/ > js/js.conf
+
 %.js: %.coffee
 	coffee -c $<
+	$(MAKE) js-timestamp
 
 panels/thumbnails/%.jpg: panels/%.jpg
 	convert $< -resize 118x -gravity Center -crop 118x118+0+0 $(patsubst panels/%,panels/thumbnails/%,$(<))
