@@ -44,7 +44,7 @@
 			</div>
 		</div>
 	</div> {* load-container *}
-<script type="text/javascript" src="/js/panel.js"></script>
-<script type="text/javascript" src="/js/nav.js"></script>
+<script type="text/javascript" src="/js/panel.js?v=20120224"></script>
+<script type="text/javascript" src="/js/nav.js?v=20120224"></script>
 {/block}
 {* Rename to panel.tpl *}
