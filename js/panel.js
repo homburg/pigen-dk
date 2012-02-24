@@ -1,7 +1,9 @@
 (function() {
   var Panel, console, l;
 
-  if (!(typeof console !== "undefined" && console !== null)) {
+  console = window.console;
+
+  if (!(console != null)) {
     console = {
       log: function() {},
       dir: function() {},
@@ -75,11 +77,12 @@
     Panel.load = function(id) {
       return $("#load-container").fadeOut(null, function() {
         return $("#load-container").load("/" + id + " #load-container > *", function(responseText, textStatus) {
-          var domain;
+          var domain, m;
           if (typeof _gaq !== "undefined" && _gaq !== null) {
             _gaq.push(['_trackPageview', "/" + id]);
           }
-          console.log(responseText, "responseText");
+          m = responseText.match(/<title>(.*)<\/title>/m);
+          if ((m != null ? m.length : void 0) === 2) document.title = m[1];
           $("#load-container").fadeIn();
           domain = window.Web.domain;
           return window.d.reload("http://" + domain + "/" + id);

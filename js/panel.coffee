@@ -1,3 +1,4 @@
+console = window.console
 if !console?
 	console =
 		log: ->
@@ -59,7 +60,8 @@ class Panel
 			$("#load-container").load "/#{id} #load-container > *", (responseText, textStatus) ->
 				# TODO: event pattern
 				_gaq.push ['_trackPageview', "/#{id}"] if _gaq?
-				console.log responseText, "responseText"
+				m = responseText.match(/<title>(.*)<\/title>/m)
+				document.title = m[1] if m?.length == 2
 				$("#load-container").fadeIn()
 				# Disqus
 				domain = window.Web.domain
