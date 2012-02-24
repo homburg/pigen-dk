@@ -5,6 +5,8 @@ THUMBNAILS = $(patsubst panels/%,panels/thumbnails/%,$(PANELS))
 PANELS_MOBILE = $(patsubst panels/%,panels/m/%,$(PANELS))
 YAML = $(wildcard panels/*.yaml)
 YAML_TARGETS = $(patsubst panels/%,panels/yaml_lock/%,$(YAML))
+COFFEE = $(wildcard js/*.coffee)
+JS = $(patsubst %.coffee, %.js, $(COFFEE))
 
 all: css thumbnails js yaml m
 
@@ -28,7 +30,7 @@ clean-yaml:
 css:
 	cd css; $(MAKE) $(MFLAGS)
 
-coffee: js/*.js
+coffee: $(JS)
 	
 js: coffee
 

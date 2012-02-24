@@ -44,7 +44,7 @@
 			</div>
 		</div>
 	</div> {* load-container *}
-<script type="text/javascript" src="/js/panel.js?v={#js_timestamp#}"></script>
-<script type="text/javascript" src="/js/nav.js?v={#js_timestamp#}"></script>
+	<script type="text/javascript" src="/js/panel.js?v={#js_timestamp#}"></script>
+	<script type="text/javascript" src="/js/nav.js?v={#js_timestamp#}"></script>
 {/block}
 {* Rename to panel.tpl *}

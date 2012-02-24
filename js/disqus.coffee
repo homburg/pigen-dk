@@ -7,8 +7,8 @@ class Disqus
 			'async': 'async',
 			'src': "http://#{shortname}.disqus.com/embed.js"
 	
-	load: (url = null) ->
-		@url = window.disqus_url = url
+	load: (url) ->
+		@url = window.disqus_url = url if url?
 		$('head').append(@dsq)
 
 	unload: ->
