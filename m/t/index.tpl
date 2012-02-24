@@ -7,25 +7,17 @@
 {/block}
 {block "content"}
 	<div id="load-container">
-		<a href="http://{Web::getDomain()}/" alt="{Site::getTitle()}"><div id="header">&nbsp;</div></a>
+		<a href="http://{Web::getDomain()}/" alt="{Site::getTitle()}"><div id="header"><img src="/i/m/header.jpg" alt="{Site::getTitle()}" /></div></a>
 		<div id="joke">
 		{if $next}
 			<a href="{$next->getAddress(false)}" class="softlink">
-				<img src="{$p->getUri()}" />
+				<img src="{$p->getMobileUri()}" />
 			</a>
 		{else}
-			<img src="{$p->getUri()}" />
+			<img src="{$p->getMobileUri()}" />
 		{/if}
 		</div>
 		<div id="tools">
-			<div id="share-left" class="left">
-				<div id="facebook-share">{include file="t/c/facebook-share.tpl"}</div>
-				<div id="twitter-share">{include file="t/c/twitter-share.tpl"}</div>
-			</div>
-			<div id="share-right" class="right">
-				<div><a href="/galleri" alt="galleri"><img src="/i/gallery.gif" alt="galleri" /></a></div>
-				<div style="width: 7px;">&nbsp;</div>
-			</div>
 			<div id="navigation">
 				{if $previous}
 				<a id="prev" href="{$previous->getAddress(false)}" class="softlink"><img alt="forrige" src="/i/left.png" /></a>
@@ -34,11 +26,15 @@
 				<a id="next" href="{$next->getAddress(false)}" class="softlink"><img alt="næste" src="/i/right.png" /></a>
 				{/if}
 			</div>
+
+			<div id="facebook-share">{include file="t/c/facebook-share.tpl"}</div>
+			<div id="twitter-share">{include file="t/c/twitter-share.tpl"}</div>
+			<div id="gallery-link"><a href="/galleri" alt="galleri"><img src="/i/gallery.gif" alt="galleri" /></a></div>
 		</div>
 		<div id="bottom">
-			<div id="comments">{include file="t/c/disqus.tpl"}</div>
+			{* <div id="comments">{include file="t/c/disqus.tpl"}</div> *}
 			<div id="footer">
-				<p><a href="http://theismadsen.dk" alt="theismadsen.dk">{Site::getTitle()} 2005 - 2012 · Tegnet af Theis Vallø Madsen</a>
+				<p><a href="http://theismadsen.dk" alt="theismadsen.dk">{Site::getTitle()} 2005 - 2012<br />Tegnet af Theis Vallø Madsen</a>
 				{if Server::isDevelopment()}<br /><span style="font-weight: bold;">Udvikling</span>{/if}
 				</p>
 			</div>
@@ -46,5 +42,17 @@
 	</div> {* load-container *}
 <script type="text/javascript" src="/js/panel.js"></script>
 <script type="text/javascript" src="/js/nav.js"></script>
+{include file="m/t/c/jquery.mobile.tpl"}
+<script type="text/javascript">
+$(function () {
+	var body = $(document.body);
+	body.bind("swipeleft", function () {
+		$("#next").trigger("click");
+	});
+	body.bind("swiperight", function () {
+		$("#prev").trigger("click");
+	});
+});
+</script>
 {/block}
 {* Rename to panel.tpl *}

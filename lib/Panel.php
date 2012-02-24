@@ -4,10 +4,14 @@ class Panel
 {
 
 	const BASENAME = '/panels/';
+	const BASENAME_MOBILE = '/panels/m/';
 	const FILETYPE_IMAGE_JPEG = 'image/jpeg';
 
 	const ORDER_ASC = 'asc';
 	const ORDER_DESC = 'desc';
+
+	const MODE_DESKTOP = 1;
+	const MODE_MOBILE = 2;
 
 	/**
 	 * @var string $id Unique name, matches (part of) filename
@@ -253,5 +257,13 @@ class Panel
 			return self::BASENAME . $this->getFilename();
 		else
 			return 'http://'.Web::getDomain().self::BASENAME.$this->getFilename();
+	}
+
+	public function getMobileUri ($full = false)
+	{
+		if (!$full)
+			return self::BASENAME_MOBILE . $this->getFilename();
+		else
+			return 'http://'.Web::getDomain().self::BASENAME_MOBILE.$this->getFilename();
 	}
 }

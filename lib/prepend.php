@@ -7,6 +7,9 @@ require_once('Smarty.class.php');
 
 function __autoload ($classname)
 {
+	if (!@$_SERVER['DOCUMENT_ROOT'])
+		$_SERVER['DOCUMENT_ROOT'] = dirname(__DIR__);
+
 	$filename = $_SERVER['DOCUMENT_ROOT'].'/lib/'.$classname.'.php';
 	if (file_exists($filename) && is_file($filename))
 		require_once($filename);

@@ -1,0 +1,140 @@
+@import "compass/css3";
+@import "compass/reset";
+
+$containerHeight: 751px;
+$headerHeight: 110px;
+$jokeHeight: 465px;
+$fullMinHeight: $containerHeight + $headerHeight + $jokeHeight;
+$width: 400px;
+
+$fontFamily: 'Asap', sans-serif;
+
+.hide {
+	display: none;
+}
+
+body {
+	font-family: monospace, sans;
+	width: 320px;
+}
+div#container {
+	// background-image: url('/i/m/background.jpg');
+	// background-repeat: no-repeat;
+	// box-sizing: border-box;
+}
+div#header {
+	margin-bottom: 31px;
+	margin-top: 0px;
+}
+div#joke {
+}
+div#tools {
+	text-align: center;
+	#facebook-share, #twitter-share, #gallery-link {
+		display: inline;
+	}
+	> #navigation {
+		text-align: center;
+		margin-bottom: 7px;
+	}
+	> * {
+	}
+	// margin-top: 36px;
+	padding-top: 8px;
+	overflow: hidden;
+	#share-left {
+		> div { text-align: left; }
+	}
+	#share-left, #share-right {
+		// > div { vertical-align: top; }
+	}
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+div {
+	margin: 0px;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+
+#comments {
+	margin-top: 71px;
+	#disqus_thread {
+
+		> #dsq-content {
+		}
+		// mobile
+		> #dsq-content.dsq-mobile {
+			background: none !important;
+			> #dsq-topwrapper {
+				display: none;
+			}
+			> #dsq-comments {
+				background: none !important;
+			}
+		}
+	}
+	* {
+		font-family: $fontFamily;
+		color: #555;
+		letter-spacing: 1px;
+		font-size: 10pt;
+		font-weight: bold;
+	}
+	#dsq-global-toolbar {
+		display: none; 
+	}
+	#dsq-content {
+	}
+}
+
+#footer {
+	text-align: center;
+	// background-image: url(/i/background.jpg);
+	// background-position: bottom;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	* {
+			font-family: $fontFamily;
+			font-size: 9pt;
+			color: #111;
+			// @include text-shadow(2px #333);
+			text-decoration: none;
+	}
+}
+
+#bottom {
+		// background-image: url(/i/background-loop.jpg);
+}
+
+// Galleri
+body.gallery div#container {
+	background-image: url(/i/background-gallery.jpg);
+	background-position: 7px 0px;
+}
+div#gallery {
+	text-align: center;
+	overflow: hidden;
+	padding-bottom: 20px;
+}
+div.gallery-part {
+	overflow: hidden;
+}
+div.gallery-item {
+	padding: 5px;
+	border: solid 1px gray;
+	margin: 5px;
+	float: left;
+	background:white;
+	// @include box-shadow(#333 2px);
+}
+body.gallery div#header {
+}
+body.gallery div#container {
+}

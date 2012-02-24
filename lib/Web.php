@@ -49,6 +49,12 @@ class Web
 		return self::$smarty;
 	}
 
+	public static function setTemplateDir($dir)
+	{
+		$smarty = static::getSmarty();
+		$smarty->setTemplateDir($dir);
+	}
+
 	/**
 	 * Redirect and stop output
 	 *
