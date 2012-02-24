@@ -14,8 +14,7 @@
     }
 
     Disqus.prototype.load = function(url) {
-      if (url == null) url = null;
-      this.url = window.disqus_url = url;
+      if (url != null) this.url = window.disqus_url = url;
       return $('head').append(this.dsq);
     };
 

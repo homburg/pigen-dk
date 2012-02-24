@@ -16,6 +16,7 @@
 	{/block}
 </head>
 <body class="{$id|default:""}">
+	{include file="t/c/js_setup.tpl"}
 	<div id="container">
 		{block name="content"}
 		{$debug|default:'debug!'|var_export nofilter}

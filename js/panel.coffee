@@ -61,7 +61,8 @@ class Panel
 				_gaq.push ['_trackPageview', "/#{id}"] if _gaq?
 				$("#load-container").fadeIn()
 				# Disqus
-				window.d.reload()
+				domain = window.Web.domain
+				window.d.reload("http://#{domain}/#{id}")
 	
 	@loadContainers: {"load-container": "load-container", }
 
