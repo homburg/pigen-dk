@@ -29,6 +29,8 @@ class Web
 			$smarty->setConfigDir('t/');
 
 			$smarty->configLoad('puo.conf');
+			if (is_file(Server::getDocumentRoot().'/js/js.conf'))
+				$smarty->configLoad(Server::getDocumentRoot().'/js/js.conf');
 
 			$smarty->registerClass('Web', 'Web');
 			$smarty->registerClass('Site', 'Site');

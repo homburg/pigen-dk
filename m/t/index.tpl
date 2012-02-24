@@ -40,8 +40,8 @@
 			</div>
 		</div>
 	</div> {* load-container *}
-<script type="text/javascript" src="/js/panel.js"></script>
-<script type="text/javascript" src="/js/nav.js"></script>
+<script type="text/javascript" src="/js/panel.js?v={#js_timestamp#}"></script>
+<script type="text/javascript" src="/js/nav.js?v={#js_timestamp#}"></script>
 {include file="m/t/c/jquery.mobile.tpl"}
 <script type="text/javascript">
 $(function () {

@@ -56,12 +56,14 @@ class Panel
 	# TODO: 404?
 	@load: (id) ->
 		$("#load-container").fadeOut null, ->
-			$("#load-container").load "/#{id} #load-container > *", ->
+			$("#load-container").load "/#{id} #load-container > *", (responseText, textStatus) ->
 				# TODO: event pattern
 				_gaq.push ['_trackPageview', "/#{id}"] if _gaq?
+				console.log responseText, "responseText"
 				$("#load-container").fadeIn()
 				# Disqus
-				window.d.reload()
+				domain = window.Web.domain
+				window.d.reload("http://#{domain}/#{id}")
 	
 	@loadContainers: {"load-container": "load-container", }
 

@@ -11,8 +11,8 @@
 	<link rel="stylesheet" href="/css/m_style.css" type="text/css" />
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.8.17/themes/base/jquery-ui.css" type="text/css" />
 	<script type="text/javascript" src="//code.jquery.com/jquery-latest.min.js" ></script>
-<script type="text/javascript" src="//code.jquery.com/ui/1.8.17/jquery-ui.js"></script>
-<script type="text/javascript" src="//code.homburg.dk/jquery.ba-bbq.js"></script>
+	<script type="text/javascript" src="//code.jquery.com/ui/1.8.17/jquery-ui.js"></script>
+	<script type="text/javascript" src="//code.homburg.dk/jquery.ba-bbq.js"></script>
 	{include file="t/c/ga.tpl"}
 	{/block}
 </head>

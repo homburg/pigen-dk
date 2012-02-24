@@ -74,12 +74,15 @@
 
     Panel.load = function(id) {
       return $("#load-container").fadeOut(null, function() {
-        return $("#load-container").load("/" + id + " #load-container > *", function() {
+        return $("#load-container").load("/" + id + " #load-container > *", function(responseText, textStatus) {
+          var domain;
           if (typeof _gaq !== "undefined" && _gaq !== null) {
             _gaq.push(['_trackPageview', "/" + id]);
           }
+          console.log(responseText, "responseText");
           $("#load-container").fadeIn();
-          return window.d.reload();
+          domain = window.Web.domain;
+          return window.d.reload("http://" + domain + "/" + id);
         });
       });
     };

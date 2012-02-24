@@ -33,7 +33,7 @@ coffee: js/*.js
 js: coffee
 
 js-timestamp:
-	stat --printf="js_timestamp=\"%y\"" js/ > js/js.conf
+	stat --printf="js_timestamp=\"%Y\"" js/ > js/js.conf
 
 %.js: %.coffee
 	coffee -c $<
