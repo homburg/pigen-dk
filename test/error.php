@@ -7,6 +7,7 @@ class ErrorPage extends DemoPage
 
 	protected static function load ($s)
 	{
+		// Throws exception
 		throw new Exception("Exception!");
 	}
 }
