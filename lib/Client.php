@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Static class representing the http client
+ */
 class Client {
 	public static function isAndroid ()
 	{
