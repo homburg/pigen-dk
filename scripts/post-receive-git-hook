@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Update working dir after push
 function updateWorkingDir ()
 {
 	pushd ../
