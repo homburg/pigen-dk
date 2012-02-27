@@ -4,6 +4,7 @@ function updateWorkingDir ()
 {
 	pushd ../
 	unset GIT_DIR
+	git status --porcelain
 	git checkout -f
 	git pull
 }
