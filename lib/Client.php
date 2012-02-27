@@ -4,6 +4,11 @@
  * Static class representing the http client
  */
 class Client {
+
+	/**
+	 * Check if the client is an Android device
+	 * Tablets and mobile alike
+	 */
 	public static function isAndroid ()
 	{
 		return false !== strpos(Server::getHttpUserAgent(), 'Android');
