@@ -32,16 +32,21 @@ class Panel
 		if l.hash != ""
 			for name, selector in Panel.loadContainers
 				$("##{name}").hide()
+
 		# Overloading default navigation link
 		$("a.softlink").live 'click', (event) ->
 			id = $(this).attr('href').replace /.*\//,""
 			l.href = "/#/#{id}"
 			event.preventDefault()
 			false
-		$(window).bind 'hashchange', (event) ->
+
+		$(window).bind 'hashchange', (e) ->
 			fragment = $.param.fragment()
-			return if l.hash == ""
-			Panel.load fragment[1..]
+			if l.hash != ""
+				Panel.load fragment[1..]
+			else
+				Panel.load()
+
 		return if l.hash == ""
 		fragment = l.hash
 		l.hash = ""

@@ -53,11 +53,14 @@
         event.preventDefault();
         return false;
       });
-      $(window).bind('hashchange', function(event) {
+      $(window).bind('hashchange', function(e) {
         var fragment;
         fragment = $.param.fragment();
-        if (l.hash === "") return;
-        return Panel.load(fragment.slice(1));
+        if (l.hash !== "") {
+          return Panel.load(fragment.slice(1));
+        } else {
+          return Panel.load();
+        }
       });
       if (l.hash === "") return;
       fragment = l.hash;
