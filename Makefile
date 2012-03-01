@@ -45,7 +45,7 @@ panels/thumbnails/%.jpg: panels/%.jpg
 	convert $< -resize 118x -gravity Center -crop 118x118+0+0 $(patsubst panels/%,panels/thumbnails/%,$(<))
 
 panels/m/%.jpg: panels/%.jpg
-	convert $< -resize 320x -gravity Center $(patsubst panels/%,panels/m/%,$(<))
+	convert $< -resize 296x -gravity Center $(patsubst panels/%,panels/m/%,$(<))
 
 panels/yaml_lock/%.yaml: panels/%.yaml
 	scripts/fb_yaml.php $?
