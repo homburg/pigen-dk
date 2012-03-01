@@ -56,7 +56,7 @@ class Page implements iPage
 		static::load(Web::getSmarty());
 
 		if (Web::getClient()->request->isMobile())
-			Web::setTemplateDir('m/t/');
+			Web::setTemplateDir('m/t/', 'mobile');
 
 		Web::getSmarty()->display(static::$t);
 	}
