@@ -1,10 +1,4 @@
-{extends "master.tpl"}
-{block name="head" append}
-	<meta property="og:title" content="{$p->getTitle(true)}" />
-	<meta property="og:image" content="{$p->getUri(true)}" />
-	<meta property="og:url" content="{$p->getAddress()}" />
-	<meta property="og:type" content="article" />
-{/block}
+{extends "[desktop]index.tpl"}
 {block "content"}
 	<div id="load-container">
 		<a href="http://{Web::getDomain()}/" alt="{$site->getTitle()}"><div id="header"><img src="/i/m/header.jpg" alt="{$site->getTitle()}" /></div></a>
@@ -27,12 +21,12 @@
 				{/if}
 			</div>
 
-			<div id="facebook-share">{include file="t/c/facebook-share.tpl"}</div>
-			<div id="twitter-share">{include file="t/c/twitter-share.tpl"}</div>
+			<div id="facebook-share">{include file="../../t/c/facebook-share.tpl"}</div>
+			<div id="twitter-share">{include file="../../t/c/twitter-share.tpl"}</div>
 			<div id="gallery-link"><a href="/galleri" alt="galleri"><img src="/i/gallery.gif" alt="galleri" /></a></div>
 		</div>
 		<div id="bottom">
-			{* <div id="comments">{include file="t/c/disqus.tpl"}</div> *}
+			{* <div id="comments">{include file="../../t/c/disqus.tpl"}</div> *}
 			<div id="footer">
 				<p><a href="http://theismadsen.dk" alt="theismadsen.dk">{$site->getTitle()} 2005 - 2012<br />Tegnet af Theis Vallø Madsen</a>
 				{if Server::isDevelopment()}<br /><span style="font-weight: bold;">Udvikling</span>{/if}
