@@ -49,6 +49,11 @@ class Client extends Singleton {
 		return Request::getInstance();
 	}
 
+	public function getCookies ()
+	{
+		return Cookie::getInstance();
+	}
+
 	public function __get ($property)
 	{
 		$getter = 'get'.ucfirst($property);

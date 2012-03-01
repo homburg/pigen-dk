@@ -1,6 +1,6 @@
 <?php
 
-class Singleton {
+abstract class Singleton extends MagicProperties {
 	public static $_instances;
 
 	public static function getInstance()

@@ -13,12 +13,28 @@ class Page implements iPage
 
 	protected static function load ($s)
 	{
-		if (Web::getClient()->isMobile()
-			&& Web::getSettings()->isMobileEnabled())
+		if (isset($_GET['m']))
+			Web::getSettings()->setMobileEnabled(Web::getClient()->request->get->m);
+
+		// Mobile request
+		if (Web::getclient()->request->isMobile())
 		{
-			$r = 'http://'.Web::getDomain(Web::DOMAIN_TYPE_MOBILE).'/'
-				.Web::getUri();
-			Web::redirect($r);
+			if (!Web::getSettings()->isMobileEnabled())
+			{
+				$r = 'http://'.Web::getDomain(Web::DOMAIN_TYPE_DESKTOP).'/'
+					.Web::getUri();
+				Web::redirect($r);
+			}
+		}
+		else // Desktop request
+		{
+			if (Web::getClient()->isMobile()
+				&& Web::getSettings()->isMobileEnabled())
+			{
+				$r = 'http://'.Web::getDomain(Web::DOMAIN_TYPE_MOBILE).'/'
+					.Web::getUri();
+				Web::redirect($r);
+			}
 		}
 
 		$s->assign('title', static::$title);

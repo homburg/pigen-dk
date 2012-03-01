@@ -54,5 +54,6 @@ $(function () {
 	});
 });
 </script>
+<p><a href="?m=false">Desktop</a></p>
 {/block}
 {* Rename to panel.tpl *}

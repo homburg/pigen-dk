@@ -11,4 +11,9 @@ class Request extends Singleton {
 	{
 		return 1 === preg_match('/^m\./', Server::getHttpHost());
 	}
+
+	public function getGet ()
+	{
+		return Get::getInstance();
+	}
 }
