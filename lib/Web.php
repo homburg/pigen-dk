@@ -27,7 +27,7 @@ class Web
 		{
 			$smarty = new Smarty();
 
-			$smarty->setTemplateDir('t/');
+			$smarty->setTemplateDir(array('t/', 'desktop' => 't/'));
 			$smarty->setCacheDir('/tmp/smarty/cache');
 			$smarty->setCompileDir('/tmp/smarty/compile');
 			$smarty->setConfigDir('t/');
@@ -55,10 +55,24 @@ class Web
 		return self::$smarty;
 	}
 
-	public static function setTemplateDir($dir)
+	public static function setTemplateDir ($dir, $key = null)
 	{
 		$smarty = static::getSmarty();
-		$smarty->setTemplateDir($dir);
+		$ts = $smarty->getTemplateDir();
+		if (!is_array($ts))
+			$ts = array($ts);
+
+		$newTs = array($dir);
+		if (null != $key)
+			$newTs[$key] = $dir;
+		$smarty->setTemplateDir(
+			array_merge($newTs, $ts)
+		);
+	}
+
+	public static function pushTemplateDir ($dir)
+	{
+		Debug::log($smarty->getTemplateDir());
 	}
 
 	/**
