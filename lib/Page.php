@@ -13,6 +13,14 @@ class Page implements iPage
 
 	protected static function load ($s)
 	{
+		if (Web::getClient()->isMobile()
+			&& Web::getSettings()->isMobileEnabled())
+		{
+			$r = 'http://'.Web::getDomain(Web::DOMAIN_TYPE_MOBILE).'/'
+				.Web::getUri();
+			Web::redirect($r);
+		}
+
 		$s->assign('title', static::$title);
 		$s->assign('id', static::$id);
 	}
@@ -31,8 +39,9 @@ class Page implements iPage
 	{
 		static::load(Web::getSmarty());
 
-		if (Client::isMobile() || 1 === preg_match('/^m\./', Server::getHttpHost()))
+		if (Web::getClient()->request->isMobile())
 			Web::setTemplateDir('m/t/');
+
 		Web::getSmarty()->display(static::$t);
 	}
 

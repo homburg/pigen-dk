@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	{block name="head"}
-	<title>{$title|default:Site::getTitle()}</title>
+	<title>{$title|default:$site->getTitle()}</title>
 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>

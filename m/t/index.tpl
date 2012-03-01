@@ -7,7 +7,7 @@
 {/block}
 {block "content"}
 	<div id="load-container">
-		<a href="http://{Web::getDomain()}/" alt="{Site::getTitle()}"><div id="header"><img src="/i/m/header.jpg" alt="{Site::getTitle()}" /></div></a>
+		<a href="http://{Web::getDomain()}/" alt="{$site->getTitle()}"><div id="header"><img src="/i/m/header.jpg" alt="{$site->getTitle()}" /></div></a>
 		<div id="joke">
 		{if $next}
 			<a href="{$next->getAddress(false)}" class="softlink">
@@ -34,7 +34,7 @@
 		<div id="bottom">
 			{* <div id="comments">{include file="t/c/disqus.tpl"}</div> *}
 			<div id="footer">
-				<p><a href="http://theismadsen.dk" alt="theismadsen.dk">{Site::getTitle()} 2005 - 2012<br />Tegnet af Theis Vallø Madsen</a>
+				<p><a href="http://theismadsen.dk" alt="theismadsen.dk">{$site->getTitle()} 2005 - 2012<br />Tegnet af Theis Vallø Madsen</a>
 				{if Server::isDevelopment()}<br /><span style="font-weight: bold;">Udvikling</span>{/if}
 				</p>
 			</div>

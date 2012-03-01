@@ -3,7 +3,7 @@
 <head>
 	{block name="head"}
 	<meta charset="UTF-8">
-	<title>{$title|default:Site::getTitle()}</title>
+	<title>{$title|default:$site->getTitle()}</title>
 	<link href='http://fonts.googleapis.com/css?family=Asap|Permanent+Marker|Gudea' rel='stylesheet' type='text/css'> 
 	<link rel="favicon" type="image/ico" href="/favicon.ico" />
 	<link rel="stylesheet" href="/css/screen.css" type="text/css" />
