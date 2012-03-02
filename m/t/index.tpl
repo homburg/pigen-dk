@@ -1,7 +1,13 @@
 {extends "[desktop]index.tpl"}
 {block "content"}
 	<div id="load-container">
-		<a href="http://{Web::getDomain()}/" alt="{$site->getTitle()}"><div id="header"><img src="/i/m/header.jpg" alt="{$site->getTitle()}" /></div></a>
+		{strip}
+		<a href="http://{Web::getDomain()}/" alt="{$site->getTitle()}">
+			<div id="header">
+				&nbsp;
+			</div>
+		</a>
+		{/strip}
 		<div id="joke">
 		{if $next}
 			<a href="{$next->getAddress(false)}" class="softlink">
@@ -24,9 +30,10 @@
 			<div id="facebook-share">{include file="../../t/c/facebook-share.tpl"}</div>
 			<div id="twitter-share">{include file="../../t/c/twitter-share.tpl"}</div>
 			<div id="gallery-link"><a href="/galleri" alt="galleri"><img src="/i/gallery.gif" alt="galleri" /></a></div>
+			<div id="desktop-link"><a href="?m=false">Desktop</a></div>
 		</div>
 		<div id="bottom">
-			{* <div id="comments">{include file="../../t/c/disqus.tpl"}</div> *}
+			<div id="comments">{include file="../../t/c/disqus.tpl"}</div>
 			<div id="footer">
 				<p><a href="http://theismadsen.dk" alt="theismadsen.dk">{$site->getTitle()} 2005 - 2012<br />Tegnet af Theis Vallø Madsen</a>
 				{if Server::isDevelopment()}<br /><span style="font-weight: bold;">Udvikling</span>{/if}
@@ -48,6 +55,5 @@ $(function () {
 	});
 });
 </script>
-<p><a href="?m=false">Desktop</a></p>
 {/block}
 {* Rename to panel.tpl *}
