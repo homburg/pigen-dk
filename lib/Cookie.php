@@ -29,4 +29,10 @@ class Cookie extends Singleton {
 		setcookie((string)$property, $value, $expire, '/', $domain);
 		$this->cookies[(string)$property] = $value;
 	}
+
+	public function __isset ($property)
+	{
+		return isset($cookies[$property]) ||
+			isset($_COOKIE[$property]);
+	}
 }

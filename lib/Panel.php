@@ -240,23 +240,23 @@ class Panel
 		return $this->id . $this->getExtension();
 	}
 
-	public function getAddress ($full = true)
+	public function getAddress ($full = true, $domainType = Web::DOMAIN_TYPE_AUTO)
 	{
 		if (!$full)
 			return '/'.$this->id;
 		else
-			return 'http://'.Web::getDomain().'/'.$this->id;
+			return 'http://'.Web::getDomain($domainType).'/'.$this->id;
 	}
 
 	/**
 	 * @return string 
 	 */
-	public function getUri($full = false)
+	public function getUri($full = false, $domainType = Web::DOMAIN_TYPE_AUTO)
 	{
 		if (!$full)
 			return self::BASENAME . $this->getFilename();
 		else
-			return 'http://'.Web::getDomain().self::BASENAME.$this->getFilename();
+			return 'http://'.Web::getDomain($domainType).self::BASENAME.$this->getFilename();
 	}
 
 	public function getMobileUri ($full = false)

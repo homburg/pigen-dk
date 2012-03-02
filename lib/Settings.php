@@ -9,6 +9,11 @@ class Settings extends Singleton {
 
 	public function isMobileEnabled ()
 	{
-		return Web::getClient()->cookies->mobileEnabled;
+		$c = Web::getClient()->cookies;
+
+		if (isset($c->mobileEnabled))
+			return $c->mobileEnabled;
+		else
+			return true;
 	}
 }
