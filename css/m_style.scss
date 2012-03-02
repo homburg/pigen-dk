@@ -16,6 +16,8 @@ $fontFamily: 'Asap', sans-serif;
 body {
 	font-family: monospace, sans;
 	width: 320px;
+	background-image: url(/m/i/background.jpg);
+	background-repeat: no-repeat;
 }
 div#container {
 	// background-image: url('/i/m/background.jpg');
@@ -23,15 +25,23 @@ div#container {
 	// box-sizing: border-box;
 }
 div#header {
-	margin-bottom: 31px;
-	margin-top: 0px;
+	margin: 0px;
+	height: 86px;
 }
 div#joke {
+	text-align: center;
+	> img {
+		margin-right: 3px;
+	}
 }
 div#tools {
 	text-align: center;
 	#facebook-share, #twitter-share, #gallery-link {
 		display: inline;
+	}
+	#desktop-link {
+		display: inline-block;
+		border: solid 1px black;
 	}
 	> #navigation {
 		text-align: center;
@@ -64,7 +74,7 @@ div {
 }
 
 #comments {
-	margin-top: 71px;
+	margin: 71px 10px 0px 10px;
 	#disqus_thread {
 
 		> #dsq-content {
@@ -97,6 +107,7 @@ div {
 #footer {
 	text-align: center;
 	// background-image: url(/i/background.jpg);
+	background-image: url(/m/i/background-loop.jpg);
 	// background-position: bottom;
 	padding-top: 10px;
 	padding-bottom: 20px;
@@ -110,27 +121,34 @@ div {
 }
 
 #bottom {
-		// background-image: url(/i/background-loop.jpg);
+		background-image: url(/m/i/background-loop.jpg);
 }
 
 // Galleri
+body.gallery {
+	background-image: url(/m/i/background-gallery.jpg);
+	background-repeat: no-repeat;
+}
 body.gallery div#container {
-	background-image: url(/i/background-gallery.jpg);
+	// background-image: url(/i/background-gallery.jpg);
 	background-position: 7px 0px;
 }
 div#gallery {
+	background-image: url(/m/i/background-loop.jpg);
 	text-align: center;
 	overflow: hidden;
 	padding-bottom: 20px;
 }
 div.gallery-part {
 	overflow: hidden;
+	text-align: center;
 }
 div.gallery-item {
+	display: inline-block;
 	padding: 5px;
 	border: solid 1px gray;
-	margin: 5px;
-	float: left;
+	margin: 8px 4px;
+	// float: left;
 	background:white;
 	// @include box-shadow(#333 2px);
 }
