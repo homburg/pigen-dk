@@ -29,9 +29,15 @@ class Client extends Singleton {
 		return false !== strpos(Server::getHttpUserAgent(), 'iPad');
 	}
 
+	public function isWindowsPhone ()
+	{
+		return false !== strpos(Server::getHttpUserAgent(), 'IEMobile');
+	}
+
 	public function isMobile ()
 	{
-		return static::isAndroid() || static::isIPhone();
+		return static::isAndroid() || static::isIPhone()
+			|| static::isWindowsPhone();
 	}
 
 	public function isTablet ()
