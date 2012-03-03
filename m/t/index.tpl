@@ -46,11 +46,11 @@
 {include file="m/t/c/jquery.mobile.tpl"}
 <script type="text/javascript">
 $(function () {
-	var body = $(document.body);
-	body.bind("swipeleft", function () {
+	var joke = $("#joke");
+	joke.live("swipeleft", function () {
 		$("#next").trigger("click");
 	});
-	body.bind("swiperight", function () {
+	joke.live("swiperight", function () {
 		$("#prev").trigger("click");
 	});
 });
