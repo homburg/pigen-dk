@@ -32,7 +32,7 @@ class Cookie extends Singleton {
 
 	public function __isset ($property)
 	{
-		return isset($cookies[$property]) ||
+		return isset($this->cookies[$property]) ||
 			isset($_COOKIE[$property]);
 	}
 }
