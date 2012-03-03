@@ -21,7 +21,7 @@ class Page implements iPage
 		{
 			if (!Web::getSettings()->isMobileEnabled())
 			{
-				$r = 'http://'.Web::getDomain(Web::DOMAIN_TYPE_DESKTOP).'/'
+				$r = 'http://'.Web::getDomain(Web::DOMAIN_TYPE_DESKTOP)
 					.Web::getUri();
 				Web::redirect($r);
 			}
@@ -31,7 +31,7 @@ class Page implements iPage
 			if (Web::getClient()->isMobile()
 				&& Web::getSettings()->isMobileEnabled())
 			{
-				$r = 'http://'.Web::getDomain(Web::DOMAIN_TYPE_MOBILE).'/'
+				$r = 'http://'.Web::getDomain(Web::DOMAIN_TYPE_MOBILE)
 					.Web::getUri();
 				Web::redirect($r);
 			}
