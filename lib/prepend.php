@@ -1,6 +1,6 @@
 <?php
 
-error_reporting(E_ALL);
+error_reporting(E_ALL & E_STRICT);
 
 set_include_path(get_include_path().PATH_SEPARATOR.__DIR__);
 require_once('Smarty.class.php');
