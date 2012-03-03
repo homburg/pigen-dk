@@ -53,6 +53,9 @@ div#tools {
 	#share-left {
 		> div { text-align: left; }
 	}
+	#share-right {
+		> div { text-align: right; }
+	}
 	#share-left, #share-right {
 		// > div { vertical-align: top; }
 	}
