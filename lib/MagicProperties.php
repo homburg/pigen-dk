@@ -4,11 +4,14 @@ abstract class MagicProperties {
 	protected static $_gettersAndSetters;
 
 	public function __get ($property) {
-		$m = 'get'.ucfirst($property);
+		foreach (array('get', 'is') as $prefix)
+		{
+			$m = $prefix.ucfirst($property);
 
-		if (method_exists($this, $m))
-			return $this->$m();
-		else
-			return null;
+			if (method_exists($this, $m))
+				return $this->$m();
+		}
+
+		return null;
 	}
 }

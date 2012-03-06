@@ -15,5 +15,3 @@ function __autoload ($classname)
 		error_log('Could not load class: "'.$classname.'"');
 }
 spl_autoload_register('__autoload');
-
-?>

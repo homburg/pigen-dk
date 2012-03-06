@@ -159,5 +159,10 @@ class Web
 		header('Status: 404 Not Found');
 		exit();
 	}
+
+	public static function hasOutputStarted ()
+	{
+		return ob_get_contents() != "" || headers_sent();
+	}
 }
 

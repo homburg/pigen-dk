@@ -59,18 +59,4 @@ class Client extends Singleton {
 	{
 		return Cookie::getInstance();
 	}
-
-	public function __get ($property)
-	{
-		$getter = 'get'.ucfirst($property);
-		if (method_exists($this, $getter))
-			return $this->$getter();
-
-		$isser = 'is'.ucfirst($property);
-		if (method_exists($this, $getter))
-			return $this->$isser();
-
-		error_log('Invalid property: '.__CLASS__.'::'.$property);
-		return null;
-	}
 }
