@@ -32,7 +32,7 @@
 			</div>
 			<div id="share-right" class="right">
 				<div id="gallery-link"><a href="/galleri" alt="galleri"><img src="/i/gallery.gif" alt="galleri" /></a></div>
-				<div id="mobile-link"><a href="{$p->getAddress(full, Web::DOMAIN_TYPE_MOBILE)}?m=true" alt="mobil"><img src="/i/mobile-link.gif" alt="mobil" /></a></div>
+				<div id="mobile-link"><a href="{$p->getAddress(true, Web::DOMAIN_TYPE_MOBILE)}?m=true" alt="mobil"><img src="/i/mobile-link.gif" alt="mobil" /></a></div>
 			</div>
 			<div id="navigation">
 				{if $previous}

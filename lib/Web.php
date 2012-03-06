@@ -117,7 +117,7 @@ class Web
 		}
 		else
 		{
-			if ($type === self::DOMAIN_TYPE_MOBILE)
+			if ($type === self::DOMAIN_TYPE_DESKTOP)
 				return 'www.pigen.dk';
 			else
 				return 'm.pigen.dk';
