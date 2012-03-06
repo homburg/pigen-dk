@@ -4,10 +4,14 @@ class Panel
 {
 
 	const BASENAME = '/panels/';
+	const BASENAME_MOBILE = '/panels/m/';
 	const FILETYPE_IMAGE_JPEG = 'image/jpeg';
 
 	const ORDER_ASC = 'asc';
 	const ORDER_DESC = 'desc';
+
+	const MODE_DESKTOP = 1;
+	const MODE_MOBILE = 2;
 
 	/**
 	 * @var string $id Unique name, matches (part of) filename
@@ -236,22 +240,30 @@ class Panel
 		return $this->id . $this->getExtension();
 	}
 
-	public function getAddress ($full = true)
+	public function getAddress ($full = true, $domainType = Web::DOMAIN_TYPE_AUTO)
 	{
 		if (!$full)
 			return '/'.$this->id;
 		else
-			return 'http://'.Web::getDomain().'/'.$this->id;
+			return 'http://'.Web::getDomain($domainType).'/'.$this->id;
 	}
 
 	/**
 	 * @return string 
 	 */
-	public function getUri($full = false)
+	public function getUri($full = false, $domainType = Web::DOMAIN_TYPE_AUTO)
 	{
 		if (!$full)
 			return self::BASENAME . $this->getFilename();
 		else
-			return 'http://'.Web::getDomain().self::BASENAME.$this->getFilename();
+			return 'http://'.Web::getDomain($domainType).self::BASENAME.$this->getFilename();
+	}
+
+	public function getMobileUri ($full = false)
+	{
+		if (!$full)
+			return self::BASENAME_MOBILE . $this->getFilename();
+		else
+			return 'http://'.Web::getDomain().self::BASENAME_MOBILE.$this->getFilename();
 	}
 }

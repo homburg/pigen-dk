@@ -1,1 +1,1 @@
-/home/theis/panels/ IN_MODIFY,IN_CREATE,IN_MOVED_TO /usr/bin/make -C /srv/www/test.pigen.dk/ thumbnails yaml
+/home/theis/panels/ IN_MODIFY,IN_CREATE,IN_MOVED_TO /usr/bin/make -C /srv/www/test.pigen.dk/ thumbnails yaml m

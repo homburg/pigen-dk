@@ -1,7 +1,9 @@
 (function() {
   var Panel, console, l;
 
-  if (!(typeof console !== "undefined" && console !== null)) {
+  console = window.console;
+
+  if (!(console != null)) {
     console = {
       log: function() {},
       dir: function() {},
@@ -51,11 +53,14 @@
         event.preventDefault();
         return false;
       });
-      $(window).bind('hashchange', function(event) {
+      $(window).bind('hashchange', function(e) {
         var fragment;
         fragment = $.param.fragment();
-        if (l.hash === "") return;
-        return Panel.load(fragment.slice(1));
+        if (l.hash !== "") {
+          return Panel.load(fragment.slice(1));
+        } else {
+          return Panel.load();
+        }
       });
       if (l.hash === "") return;
       fragment = l.hash;
@@ -74,11 +79,13 @@
 
     Panel.load = function(id) {
       return $("#load-container").fadeOut(null, function() {
-        return $("#load-container").load("/" + id + " #load-container > *", function() {
-          var domain;
+        return $("#load-container").load("/" + id + " #load-container > *", function(responseText, textStatus) {
+          var domain, m;
           if (typeof _gaq !== "undefined" && _gaq !== null) {
             _gaq.push(['_trackPageview', "/" + id]);
           }
+          m = responseText.match(/<title>(.*)<\/title>/m);
+          if ((m != null ? m.length : void 0) === 2) document.title = m[1];
           $("#load-container").fadeIn();
           domain = window.Web.domain;
           return window.d.reload("http://" + domain + "/" + id);

@@ -1,1 +1,1 @@
-<a target="_blank" href="http://twitter.com/share?url={$p->getAddress()|escape:"url"}&text={$p->getTitle(true)}" alt="Del på twitter"><img src="/i/twitter-share.gif"></a>
+<a target="_blank" href="http://twitter.com/share?url={$p->getAddress(true, Web::DOMAIN_TYPE_DESKTOP)|escape:"url"}&text={$p->getTitle(true)}" alt="Del på twitter"><img src="/i/twitter-share.gif"></a>

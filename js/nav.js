@@ -19,6 +19,7 @@
 
     Nav._keydown = function(e) {
       if ($(e.target).is("textarea,input,select")) return;
+      if (e.ctrlKey || e.altKey) return;
       switch (e.which) {
         case Nav.KEY_LEFT:
           $("#prev").trigger("click");

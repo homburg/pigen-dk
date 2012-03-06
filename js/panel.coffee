@@ -1,3 +1,4 @@
+console = window.console
 if !console?
 	console =
 		log: ->
@@ -31,16 +32,21 @@ class Panel
 		if l.hash != ""
 			for name, selector in Panel.loadContainers
 				$("##{name}").hide()
+
 		# Overloading default navigation link
 		$("a.softlink").live 'click', (event) ->
 			id = $(this).attr('href').replace /.*\//,""
 			l.href = "/#/#{id}"
 			event.preventDefault()
 			false
-		$(window).bind 'hashchange', (event) ->
+
+		$(window).bind 'hashchange', (e) ->
 			fragment = $.param.fragment()
-			return if l.hash == ""
-			Panel.load fragment[1..]
+			if l.hash != ""
+				Panel.load fragment[1..]
+			else
+				Panel.load()
+
 		return if l.hash == ""
 		fragment = l.hash
 		l.hash = ""
@@ -56,9 +62,11 @@ class Panel
 	# TODO: 404?
 	@load: (id) ->
 		$("#load-container").fadeOut null, ->
-			$("#load-container").load "/#{id} #load-container > *", ->
+			$("#load-container").load "/#{id} #load-container > *", (responseText, textStatus) ->
 				# TODO: event pattern
 				_gaq.push ['_trackPageview', "/#{id}"] if _gaq?
+				m = responseText.match(/<title>(.*)<\/title>/m)
+				document.title = m[1] if m?.length == 2
 				$("#load-container").fadeIn()
 				# Disqus
 				domain = window.Web.domain

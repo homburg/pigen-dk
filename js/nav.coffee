@@ -10,6 +10,7 @@ class Nav
 
 	@_keydown: (e) ->
 		return if $(e.target).is("textarea,input,select")
+		return if e.ctrlKey || e.altKey
 		switch e.which
 			when Nav.KEY_LEFT
 				$("#prev").trigger "click"

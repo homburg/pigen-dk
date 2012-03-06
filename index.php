@@ -8,7 +8,7 @@ class IndexPage extends Page
 	protected static function load ($s)
 	{
 		parent::load($s);
-		$panelId = substr(Server::getUri(true),1);
+		$panelId = substr(Server::getUri(false),1);
 
 		if ($panelId == "")
 			$p = Panel::getNewest();
@@ -34,10 +34,12 @@ class IndexPage extends Page
 
 Page::setClass('IndexPage');
 
-$filename = Server::getDocumentRoot().'/'.Server::getUriSegment(0).'.php';
-if (file_exists($filename) && is_file($filename))
-	require_once($filename);
+$script = Server::getScript();
+if (is_file($script))
+	require_once($script);
 
-$page = Page::getClass();
-$page::render();
-
+if (!Web::hasOutputStarted())
+{
+	$page = Page::getClass();
+	$page::render();
+}
