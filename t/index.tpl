@@ -7,6 +7,14 @@
 {/block}
 {block "content"}
 	<div id="load-container">
+		<script type="text/javascript">
+			// Hide joke, if dynamic address and javascript is enabled
+			if (/#\/.+/.test(document.location.hash))
+			{
+				document.write("<div style=\"opacity: 0;\">");
+				console.log("document write!");
+			}
+		</script>
 		<a href="http://{Web::getDomain()}/" alt="{$site->getTitle()}"><div id="header">&nbsp;</div></a>
 		<div id="joke">
 		{if $next}
@@ -43,6 +51,10 @@
 				</p>
 			</div>
 		</div>
+	<script type="text/javascript">
+		// End of hiding div
+		document.write("</div>");
+	</script>
 	</div> {* load-container *}
 	<script type="text/javascript" src="/js/panel.js?v={#js_timestamp#}"></script>
 	<script type="text/javascript" src="/js/nav.js?v={#js_timestamp#}"></script>
