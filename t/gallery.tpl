@@ -7,7 +7,7 @@
 	{foreach $panels as $p}
 		{strip}
 		<div class="gallery-item">
-			<a alt="{$p->getTitle()}" href="/#/{$p->getId()}">
+			<a alt="{$p->getTitle()}" href="/{$p->getId()}">
 				<img src="{$p->getThumbnailUri()}" alt="{$p->getTitle()}" />
 			</a>
 		</div>
