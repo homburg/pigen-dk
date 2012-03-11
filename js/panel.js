@@ -88,6 +88,7 @@
           if ((m != null ? m.length : void 0) === 2) document.title = m[1];
           $("#load-container").fadeIn();
           domain = window.Web.domain;
+          console.log("link:http://" + domain + "/" + id);
           return window.d.reload("http://" + domain + "/" + id);
         });
       });

@@ -70,6 +70,7 @@ class Panel
 				$("#load-container").fadeIn()
 				# Disqus
 				domain = window.Web.domain
+				console.log "link:http://#{domain}/#{id}"
 				window.d.reload("http://#{domain}/#{id}")
 	
 	@loadContainers: {"load-container": "load-container", }

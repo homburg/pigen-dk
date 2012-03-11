@@ -53,6 +53,9 @@ $(function () {
 	joke.live("swiperight", function () {
 		$("#prev").trigger("click");
 	});
+	// Send current path to Android webview
+	if (console && console.log)
+		console.log("link:{$p->getAddress(true, Web::DOMAIN_TYPE_DESKTOP)}");
 });
 </script>
 {/block}
