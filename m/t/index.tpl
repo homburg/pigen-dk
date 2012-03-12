@@ -21,9 +21,11 @@
 			<div id="navigation">
 				{if $previous}
 				<a id="prev" href="{$previous->getAddress(false)}" class="softlink"><img alt="forrige" src="/i/left.png" /></a>
+				<img src="{$previous->getMobileUri()}" alt="prefetch-prev" style="display:none;"/>
 				{/if}
 				{if $next}
 				<a id="next" href="{$next->getAddress(false)}" class="softlink"><img alt="næste" src="/i/right.png" /></a>
+				<img src="{$next->getMobileUri()}" alt="prefetch-next" style="display:none;" />
 				{/if}
 			</div>
 

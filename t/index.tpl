@@ -12,7 +12,6 @@
 			if (/#\/.+/.test(document.location.hash))
 			{
 				document.write("<div style=\"opacity: 0;\">");
-				console.log("document write!");
 			}
 		</script>
 		<a href="http://{Web::getDomain()}/" alt="{$site->getTitle()}"><div id="header">&nbsp;</div></a>
@@ -37,9 +36,11 @@
 			<div id="navigation">
 				{if $previous}
 				<a id="prev" href="{$previous->getAddress(false)}" class="softlink"><img alt="forrige" src="/i/left.png" /></a>
+				<img src="{$previous->getUri()}" style="display:none;" />
 				{/if}
 				{if $next}
 				<a id="next" href="{$next->getAddress(false)}" class="softlink"><img alt="næste" src="/i/right.png" /></a>
+				<img src="{$next->getUri()}" style="display:none;"/>
 				{/if}
 			</div>
 		</div>

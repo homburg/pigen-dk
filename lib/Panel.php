@@ -53,7 +53,7 @@ class Panel
 	public function getTitle ($includeSiteName = false)
 	{
 		if ('' == $this->title)
-			$str = str_replace('_', ' ', $this->id);
+			return "Pigen uden ordforråd";
 		else
 			$str = $this->title;
 
