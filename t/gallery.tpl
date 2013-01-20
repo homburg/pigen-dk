@@ -1,6 +1,6 @@
 {extends "master.tpl"}
 {block "content"}
-<script src="//code.homburg.dk/jquery.infinitescroll.js" type="text/javascript"></script>
+<script src="/js/lib/jquery.infinitescroll.min.js" type="text/javascript"></script>
 <a href="http://{Web::getDomain()}/" alt="Pigen uden ordforråd"><div id="header">&nbsp;</div></a>
 <div id="gallery">
 	<div class="gallery-part" id="gallery-part-{$page}">
