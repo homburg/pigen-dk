@@ -17,15 +17,15 @@ thumbnails: $(THUMBNAILS)
 m: $(PANELS_MOBILE)
 
 clean-thumbnails:
-	rm panels/thumbnails/*
+	rm -f panels/thumbnails/*
 
 clean-m:
-	rm panels/m/*
+	rm -f panels/m/*
 
 yaml: $(YAML_TARGETS)
 
 clean-yaml:
-	rm panels/yaml_lock/*
+	rm -f panels/yaml_lock/*
 
 css:
 	cd css; $(MAKE) $(MFLAGS)
