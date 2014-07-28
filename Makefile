@@ -8,7 +8,7 @@ YAML_TARGETS = $(patsubst panels/%,panels/yaml_lock/%,$(YAML))
 COFFEE = $(wildcard js/*.coffee)
 JS = $(patsubst %.coffee, %.js, $(COFFEE))
 
-all: css thumbnails js yaml m
+all: composer css thumbnails js yaml m
 
 clean: clean-yaml clean-thumbnails clean-m
 
@@ -50,3 +50,5 @@ panels/m/%.jpg: panels/%.jpg
 panels/yaml_lock/%.yaml: panels/%.yaml
 	scripts/fb_yaml.php $?
 
+composer:
+	composer install --no-dev -o

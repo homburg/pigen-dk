@@ -1,2 +1,8 @@
 css/pigen/.sass-cache/*
 .sass-cache
+
+/panels/
+.svn/
+
+smarty/documentation/
+smarty/development/

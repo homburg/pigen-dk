@@ -1,7 +1,6 @@
 <?php
 
 set_include_path(get_include_path().PATH_SEPARATOR.__DIR__);
-require_once('Smarty.class.php');
 
 function __autoload ($classname)
 {
@@ -15,3 +14,5 @@ function __autoload ($classname)
 		error_log('Could not load class: "'.$classname.'"');
 }
 spl_autoload_register('__autoload');
+
+require_once('vendor/autoload.php');

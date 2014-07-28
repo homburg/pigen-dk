@@ -1,5 +1,8 @@
 <?php
 
+use \Symfony\Component\Yaml\Parser;
+use \Symfony\Component\Yaml\Exception\ParseException;
+
 class Panel
 {
 
@@ -206,9 +209,16 @@ class Panel
 		if (!is_file($dataFilename))
 			return false;
 
-		if (false === ($data = yaml_parse_file($dataFilename)))
-		{
-			Debug::log('Error parsing image data from file: "'.$dataFilename.'"');
+		$yaml = new Parser();
+
+		try {
+			$data = $yaml->parse(file_get_contents($dataFilename));
+		} catch (ParseException $pe) {
+			Debug::log(sprintf(
+				'Error parsing image data from file: "%s": %s',
+				$dataFilename,
+				$pe->getMessage()
+			));
 			return false;;
 		}
 

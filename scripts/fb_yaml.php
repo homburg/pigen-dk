@@ -33,11 +33,12 @@ class FbCurler {
 			exit(1);
 		}
 
-		// I for one can't wait for array literals
-		if (gethostname() === "gravko")
-			$domains = array('test.pigen.dk');
-		else
+		if (getenv("PIGEN_ENV") === "prod") {
 			$domains = array('pigen.dk', 'www.pigen.dk');
+		} else {
+			$domains = array('test.pigen.dk');
+		}
+
 		$out = "";
 		foreach ($domains as $domain) {
 			$url  = "http://${domain}/${id}";

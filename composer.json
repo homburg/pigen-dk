@@ -1,0 +1,13 @@
+{
+    "name": "pigen/pigen.dk",
+    "authors": [
+        {
+            "name": "Thomas B Homburg",
+            "email": "thomas@homburg.dk"
+        }
+    ],
+    "require": {
+		"smarty/smarty": "*",
+		"symfony/yaml": "*"
+    }
+}

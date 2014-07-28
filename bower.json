@@ -1,0 +1,22 @@
+{
+  "name": "pigen.dk",
+  "version": "0.0.0",
+  "homepage": "https://github.com/homburg/pigen-dk",
+  "authors": [
+    "Thomas B Homburg <thomas@homburg.dk>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~1",
+    "jquery-ui": "~1.11.0",
+    "jquery.bbq": "~1.2.1"
+  }
+}

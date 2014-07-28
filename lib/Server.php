@@ -5,8 +5,6 @@ class Server
 	private static $uriSegments;
 	private static $script;
 
-	const HOSTNAME_DEVELOPMENT = 'gravko';
-
 	public static function __callStatic($method, $args)
 	{
 		$method = substr($method, 3);
@@ -23,7 +21,7 @@ class Server
 	 */
 	public static function isDevelopment ()
 	{
-		return gethostname() === self::HOSTNAME_DEVELOPMENT;
+		return !(getenv("PIGEN_ENV") === "prod");
 	}
 
 	/**

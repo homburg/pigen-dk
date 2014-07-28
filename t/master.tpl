@@ -10,10 +10,10 @@
 	{block name="stylesheets_primary"}
 	<link rel="stylesheet" href="/css/style.css" type="text/css" />
 	{/block}
-	<link rel="stylesheet" href="/css/lib/jqueryui/1.9.2/themes/base/jquery-ui.css" type="text/css" />
-	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js" ></script>
-	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.ba-bbq/1.2.1/jquery.ba-bbq.min.js"></script>
+	<link rel="stylesheet" href="/bower_components/jquery-ui/themes/base/all.css" type="text/css" />
+	<script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js" ></script>
+	<script type="text/javascript" src="/bower_components/jquery-ui/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/bower_components/jquery.bbq/jquery.ba-bbq.min.js"></script>
 	{include file="t/c/ga.tpl"}
 	{/block}
 </head>
