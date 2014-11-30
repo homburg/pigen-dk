@@ -6,3 +6,5 @@ css/pigen/.sass-cache/*
 
 smarty/documentation/
 smarty/development/
+
+/node_modules/

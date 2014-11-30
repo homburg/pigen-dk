@@ -28,7 +28,7 @@ clean-yaml:
 	rm -f panels/yaml_lock/*
 
 css:
-	cd css; $(MAKE) $(MFLAGS)
+	$(shell npm bin)/gulp
 
 coffee: $(JS)
 	
