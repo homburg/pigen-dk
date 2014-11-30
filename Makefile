@@ -1,5 +1,6 @@
 .PHONY: all css clean clean-yaml clean-thumbnails js-timestamp
 
+PORT=8080
 PANELS = $(wildcard panels/*.jpg)
 THUMBNAILS = $(patsubst panels/%,panels/thumbnails/%,$(PANELS))
 PANELS_MOBILE = $(patsubst panels/%,panels/m/%,$(PANELS))
@@ -52,3 +53,9 @@ panels/yaml_lock/%.yaml: panels/%.yaml
 
 composer:
 	composer install --no-dev -o
+
+run:
+	php -S localhost:$(PORT) cli-server.routing.php
+
+nginx_docker:
+	docker run -d --net=host -v $(PWD):/app -v $(PWD)/sites-enabled:/etc/nginx/sites-enabled dockerfile/nginx

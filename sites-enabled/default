@@ -1,0 +1,22 @@
+server {
+	listen 8087;
+	server_name .pigen.dk .puo.c.homburg.dk .pigen.c.homburg.dk;
+
+	root /app;
+
+	index index.html index.php;
+
+	location / {
+		try_files $uri $uri/ /index.php$is_args$args;
+		# fastcgi_param PIGEN_ENV "prod";
+		# TODO: Change to index.php?$q=request_uri;
+	}
+
+	location /\.git/ {
+		return 404;
+	}
+
+	location ~ \.php$ {
+		proxy_pass http://127.0.0.1:8080$request_uri;
+	}
+}
