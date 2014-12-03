@@ -1,0 +1,91 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'gulp-coffeescript' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 verbose node symlink /usr/bin/node
+5 warn package.json pigen.dk@1.0.0 No description
+6 warn package.json pigen.dk@1.0.0 No README data
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'gulp-coffeescript', null ]
+9 verbose cache add name=undefined spec="gulp-coffeescript" args=["gulp-coffeescript",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'gulp-coffeescript',
+10 verbose parsed url   path: 'gulp-coffeescript',
+10 verbose parsed url   href: 'gulp-coffeescript' }
+11 silly lockFile 1b74d4ec-gulp-coffeescript gulp-coffeescript
+12 verbose lock gulp-coffeescript /home/thomas/.npm/1b74d4ec-gulp-coffeescript.lock
+13 silly lockFile 1b74d4ec-gulp-coffeescript gulp-coffeescript
+14 silly lockFile 1b74d4ec-gulp-coffeescript gulp-coffeescript
+15 verbose addNamed [ 'gulp-coffeescript', '' ]
+16 verbose addNamed [ null, '*' ]
+17 silly lockFile acd833b9-gulp-coffeescript gulp-coffeescript@
+18 verbose lock gulp-coffeescript@ /home/thomas/.npm/acd833b9-gulp-coffeescript.lock
+19 silly addNameRange { name: 'gulp-coffeescript', range: '*', hasData: false }
+20 verbose request where is /gulp-coffeescript
+21 verbose request registry https://registry.npmjs.org/
+22 verbose request id 63b261809f3d40b7
+23 verbose url raw /gulp-coffeescript
+24 verbose url resolving [ 'https://registry.npmjs.org/', './gulp-coffeescript' ]
+25 verbose url resolved https://registry.npmjs.org/gulp-coffeescript
+26 verbose request where is https://registry.npmjs.org/gulp-coffeescript
+27 info trying registry request attempt 1 at 14:17:50
+28 http GET https://registry.npmjs.org/gulp-coffeescript
+29 http 404 https://registry.npmjs.org/gulp-coffeescript
+30 verbose headers { date: 'Sun, 30 Nov 2014 13:17:50 GMT',
+30 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+30 verbose headers   'content-type': 'application/json',
+30 verbose headers   'cache-control': 'max-age=0',
+30 verbose headers   'content-length': '52',
+30 verbose headers   'accept-ranges': 'bytes',
+30 verbose headers   via: '1.1 varnish',
+30 verbose headers   age: '0',
+30 verbose headers   'x-served-by': 'cache-fra1240-FRA',
+30 verbose headers   'x-cache': 'MISS',
+30 verbose headers   'x-cache-hits': '0',
+30 verbose headers   'x-timer': 'S1417353470.396602,VS0,VE443',
+30 verbose headers   'keep-alive': 'timeout=10, max=50',
+30 verbose headers   connection: 'Keep-Alive' }
+31 silly registry.get cb [ 404,
+31 silly registry.get   { date: 'Sun, 30 Nov 2014 13:17:50 GMT',
+31 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+31 silly registry.get     'content-type': 'application/json',
+31 silly registry.get     'cache-control': 'max-age=0',
+31 silly registry.get     'content-length': '52',
+31 silly registry.get     'accept-ranges': 'bytes',
+31 silly registry.get     via: '1.1 varnish',
+31 silly registry.get     age: '0',
+31 silly registry.get     'x-served-by': 'cache-fra1240-FRA',
+31 silly registry.get     'x-cache': 'MISS',
+31 silly registry.get     'x-cache-hits': '0',
+31 silly registry.get     'x-timer': 'S1417353470.396602,VS0,VE443',
+31 silly registry.get     'keep-alive': 'timeout=10, max=50',
+31 silly registry.get     connection: 'Keep-Alive' } ]
+32 silly lockFile acd833b9-gulp-coffeescript gulp-coffeescript@
+33 silly lockFile acd833b9-gulp-coffeescript gulp-coffeescript@
+34 error 404 404 Not Found: gulp-coffeescript
+34 error 404
+34 error 404 'gulp-coffeescript' is not in the npm registry.
+34 error 404 You should bug the author to publish it
+34 error 404 It was specified as a dependency of 'pigen.dk'
+34 error 404
+34 error 404 Note that you can also install from a
+34 error 404 tarball, folder, or http url, or git url.
+35 error System Linux 3.16.0-24-generic
+36 error command "/usr/bin/node" "/usr/bin/npm" "install" "--save" "gulp-coffeescript"
+37 error cwd /home/thomas/src/github.com/homburg/pigen.dk
+38 error node -v v0.10.32
+39 error npm -v 1.4.28
+40 error code E404
+41 verbose exit [ 1, true ]

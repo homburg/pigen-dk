@@ -34,7 +34,7 @@ class Panel
 				$("##{name}").hide()
 
 		# Overloading default navigation link
-		$("a.softlink").live 'click', (event) ->
+		$(document).on "click", "a.softlink", (event) ->
 			id = $(this).attr('href').replace /.*\//,""
 			l.href = "/#/#{id}"
 			event.preventDefault()

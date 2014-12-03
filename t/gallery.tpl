@@ -21,5 +21,5 @@
 	</div>
 </div>
 &nbsp;
-<script src="/js/gallery.js?v={#js_timestamp#}" type="text/javascript"></script>
+<script src="/public/gallery.js?v={#js_timestamp#}" type="text/javascript"></script>
 {/block}

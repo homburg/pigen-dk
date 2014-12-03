@@ -8,3 +8,4 @@ smarty/documentation/
 smarty/development/
 
 /node_modules/
+/bower_components/

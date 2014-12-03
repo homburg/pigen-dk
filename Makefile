@@ -1,4 +1,4 @@
-.PHONY: all css clean clean-yaml clean-thumbnails js-timestamp
+.PHONY: all css clean clean-yaml clean-thumbnails js-timestamp js
 
 PORT=8080
 PANELS = $(wildcard panels/*.jpg)
@@ -8,6 +8,7 @@ YAML = $(wildcard panels/*.yaml)
 YAML_TARGETS = $(patsubst panels/%,panels/yaml_lock/%,$(YAML))
 COFFEE = $(wildcard js/*.coffee)
 JS = $(patsubst %.coffee, %.js, $(COFFEE))
+GULP=$(shell npm bin)/gulp
 
 all: composer css thumbnails js yaml m
 
@@ -29,11 +30,12 @@ clean-yaml:
 	rm -f panels/yaml_lock/*
 
 css:
-	$(shell npm bin)/gulp
+	$(GULP)
 
 coffee: $(JS)
 	
-js: coffee
+js:
+	$(GULP)
 
 js-timestamp:
 	stat --printf="js_timestamp=\"%Y\"" js/ > js/js.conf

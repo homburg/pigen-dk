@@ -1,0 +1,265 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+html {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+q,
+blockquote {
+  quotes: none;
+}
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: "";
+  content: none;
+}
+a img {
+  border: none;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+.hide {
+  display: none;
+}
+body {
+  font-family: monospace, sans;
+}
+div#container {
+  margin: 0px auto;
+  background-image: url("/i/background.jpg");
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  width: 751px;
+  min-height: 1000px;
+  margin-top: 10px;
+}
+div#header {
+  height: 148px;
+  margin-bottom: 31px;
+  margin-top: 0px;
+}
+div#joke {
+  height: 465px;
+  margin: 0px 204px 0px 187px;
+  margin-bottom: 15px;
+  padding-top: 4px;
+  text-align: center;
+}
+div#tools {
+  margin-left: 181px;
+  margin-right: 197px;
+  height: 100%;
+  padding-top: 8px;
+  overflow: hidden;
+}
+div#tools>#navigation {
+  text-align: center;
+  margin: 0px auto;
+}
+div#tools #share-left>div {
+  text-align: left;
+}
+div#tools #share-right>div {
+  text-align: right;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+div {
+  margin: 0px;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+#comments {
+  width: 436px;
+  margin: 0px auto;
+  margin-top: 71px;
+}
+#comments #disqus_thread {
+  margin: 9px auto;
+}
+#comments #disqus_thread>#dsq-content {
+  padding-right: 55px;
+}
+#comments #disqus_thread>#dsq-content.dsq-mobile {
+  padding-right: 0px;
+  background: none !important;
+}
+#comments #disqus_thread>#dsq-content.dsq-mobile>#dsq-topwrapper {
+  display: none;
+}
+#comments #disqus_thread>#dsq-content.dsq-mobile>#dsq-comments {
+  background: none !important;
+}
+#comments * {
+  font-family: "Asap", sans-serif;
+  color: #555;
+  letter-spacing: 1px;
+  font-size: 10pt;
+  font-weight: bold;
+}
+#comments #dsq-global-toolbar {
+  display: none;
+}
+#footer {
+  text-align: center;
+  margin: 0px auto;
+  padding-right: 21px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+#footer * {
+  font-family: "Asap", sans-serif;
+  font-size: 9pt;
+  color: #111;
+  text-decoration: none;
+}
+#bottom {
+  background-image: url("/i/background-loop.jpg");
+}
+body.gallery div#container {
+  background-image: url("/i/background-gallery.jpg");
+  background-position: 7px 0px;
+}
+div#gallery {
+  text-align: center;
+  margin: 0px auto;
+  width: 563px;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+div.gallery-part {
+  overflow: hidden;
+}
+div.gallery-item {
+  padding: 5px;
+  border: solid 1px #808080;
+  margin: 5px;
+  float: left;
+  background: #fff;
+}
+body.gallery div#header {
+  height: 148px;
+}
+body.gallery div#container {
+  min-height: 1000px;
+}

@@ -11,9 +11,7 @@
 	<link rel="stylesheet" href="/css/style.css" type="text/css" />
 	{/block}
 	<link rel="stylesheet" href="/bower_components/jquery-ui/themes/base/all.css" type="text/css" />
-	<script type="text/javascript" src="/bower_components/jquery/dist/jquery.min.js" ></script>
-	<script type="text/javascript" src="/bower_components/jquery-ui/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="/bower_components/jquery.bbq/jquery.ba-bbq.min.js"></script>
+	<script type="text/javascript" src="/public/vendor.js" ></script>
 	{include file="t/c/ga.tpl"}
 	{/block}
 </head>
