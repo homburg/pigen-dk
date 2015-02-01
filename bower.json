@@ -18,16 +18,17 @@
     "jquery": "~1",
     "jquery-ui": "~1.11.0",
     "jquery.bbq": "~1.2.1",
-    "jquery.browser": "~0.0.6"
+    "jquery.browser": "~0.0.6",
+    "jquery-infinite-scroll": "~2.1.0"
   },
   "overrides": {
     "jquery.bbq": {
       "main": [
         "jquery.ba-bbq.js"
       ],
-	  "dependencies": {
-	    "jquery.browser": "*"
-	  }
+      "dependencies": {
+        "jquery.browser": "*"
+      }
     }
   }
 }
