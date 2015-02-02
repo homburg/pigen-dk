@@ -1,6 +1,6 @@
 {extends "master.tpl"}
 {block "content"}
-<a href="http://{Web::getDomain()}/" alt="Pigen uden ordforråd"><div id="header">&nbsp;</div></a>
+<a href="/" alt="Pigen uden ordforråd"><div id="header">&nbsp;</div></a>
 <div id="gallery">
 	<div class="gallery-part" id="gallery-part-{$page}">
 	{foreach $panels as $p}
