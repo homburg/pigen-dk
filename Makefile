@@ -51,7 +51,7 @@ panels/m/%.jpg: panels/%.jpg
 	convert $< -resize 296x -gravity Center $(patsubst panels/%,panels/m/%,$(<))
 
 panels/yaml_lock/%.yaml: panels/%.yaml
-	scripts/fb_yaml.php $?
+	# scripts/fb_yaml.php $?
 
 composer:
 	composer install --no-dev -o

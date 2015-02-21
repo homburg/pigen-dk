@@ -82,6 +82,10 @@ div#header
     margin-bottom: 31px;
     margin-top: 0px
 
+.gallery-header
+    > img
+        width 100%
+
 .responsive-header
     > img
         width 100%
@@ -186,16 +190,22 @@ body.gallery div#container {
 div#gallery
     text-align center
     margin 0px auto
+
     width 563px
-    @media (max-width: sm-max-width)
-        width: 100%
+    @media (max-width: 629px)
+        width 423px
+
+    @media (max-width: 460px)
+        width 281px
+
+    @media (max-width: 296px)
+        width 100%
 
     overflow hidden
     padding-bottom 20px
 
-div.gallery-part {
+div.gallery-part
     overflow: hidden
-}
 
 div.gallery-item {
     padding: 5px;

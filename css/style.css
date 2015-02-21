@@ -170,6 +170,9 @@ div#header {
     display: none;
   }
 }
+.gallery-header > img {
+  width: 100%;
+}
 .responsive-header {
   display: none;
 }
@@ -197,7 +200,7 @@ div#joke {
     padding-top: 0px;
   }
   div#joke img {
-    width: 78%;
+    width: 91%;
   }
 }
 div#tools {
@@ -281,7 +284,17 @@ div#gallery {
   overflow: hidden;
   padding-bottom: 20px;
 }
-@media (max-width: 750px) {
+@media (max-width: 629px) {
+  div#gallery {
+    width: 423px;
+  }
+}
+@media (max-width: 460px) {
+  div#gallery {
+    width: 281px;
+  }
+}
+@media (max-width: 296px) {
   div#gallery {
     width: 100%;
   }
