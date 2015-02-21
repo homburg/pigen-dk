@@ -197,9 +197,6 @@ div#joke {
   }
 }
 div#tools {
-  margin-top: 20px;
-  margin-left: 181px;
-  margin-right: 197px;
   height: 100%;
   padding-top: 8px;
   overflow: hidden;
@@ -219,6 +216,19 @@ div#tools .links table td:nth-child(2) {
 }
 div#tools .links table td:nth-child(3) {
   text-align: right;
+}
+@media (min-width: 751px) {
+  div#tools {
+    margin-top: 20px;
+    margin-left: 181px;
+    margin-right: 197px;
+  }
+}
+@media (max-width: 750px) {
+  div#tools {
+    width: 240px;
+    margin: 0px auto;
+  }
 }
 div#tools>#navigation {
   text-align: center;

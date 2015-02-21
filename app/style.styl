@@ -117,9 +117,15 @@ div#tools
             td:nth-child(3)
                 text-align right
 
-    margin-top 20px
-    margin-left 181px
-    margin-right 197px
+    @media (min-width: md-min-width)
+        margin-top 20px
+        margin-left 181px
+        margin-right 197px
+
+    @media (max-width: sm-max-width)
+        width 240px
+        margin 0px auto
+
     height 100%
     padding-top 8px
     overflow hidden
