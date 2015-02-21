@@ -1,6 +1,10 @@
 {extends "master.tpl"}
 {block "content"}
-<a href="/" alt="Pigen uden ordforråd"><div id="header">&nbsp;</div></a>
+<a href="/" alt="Pigen uden ordforråd">
+	<div class="gallery-header">
+		<img src="/i/background-gallery.jpg">
+	</div>
+</a>
 <div id="gallery">
 	<div class="gallery-part" id="gallery-part-{$page}">
 	{foreach $panels as $p}
