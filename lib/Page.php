@@ -13,30 +13,6 @@ class Page implements iPage
 
 	protected static function load ($s)
 	{
-		if (isset($_GET['m']))
-			Web::getSettings()->setMobileEnabled(Web::getClient()->request->get->m);
-
-		// Mobile request
-		if (Web::getclient()->request->isMobile())
-		{
-			if (!Web::getSettings()->isMobileEnabled())
-			{
-				$r = 'http://'.Web::getDomain(Web::DOMAIN_TYPE_DESKTOP)
-					.Web::getUri();
-				Web::redirect($r);
-			}
-		}
-		else // Desktop request
-		{
-			if (Web::getClient()->isMobile()
-				&& Web::getSettings()->isMobileEnabled())
-			{
-				$r = 'http://'.Web::getDomain(Web::DOMAIN_TYPE_MOBILE)
-					.Web::getUri();
-				Web::redirect($r);
-			}
-		}
-
 		$s->assign('title', static::$title);
 		$s->assign('id', static::$id);
 	}
@@ -54,9 +30,6 @@ class Page implements iPage
 	public static function render ()
 	{
 		static::load(Web::getSmarty());
-
-		if (Web::getClient()->request->isMobile())
-			Web::setTemplateDir('m/t/', 'mobile');
 
 		Web::getSmarty()->display(static::$t);
 	}

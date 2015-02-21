@@ -3,6 +3,7 @@
 <head>
 	{block name="head"}
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{$title|default:$site->getTitle(true)}</title>
 	<link href='http://fonts.googleapis.com/css?family=Asap|Permanent+Marker|Gudea' rel='stylesheet' type='text/css'> 
 	<link rel="favicon" type="image/ico" href="/favicon.ico" />

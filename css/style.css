@@ -140,24 +140,61 @@ body {
 }
 div#container {
   margin: 0px auto;
-  background-image: url("/i/background.jpg");
   background-repeat: no-repeat;
   box-sizing: border-box;
-  width: 751px;
   min-height: 1000px;
   margin-top: 10px;
+}
+@media (min-width: 751px) {
+  div#container {
+    background-image: url("/i/background.jpg");
+    width: 751px;
+  }
+}
+@media (max-width: 750px) {
+  div#container {
+    width: 100%;
+    background-image: url("/i/background-gallery.jpg");
+    background-size: contain;
+    background-position: no-repeat center;
+  }
 }
 div#header {
   height: 155px;
   margin-bottom: 31px;
   margin-top: 0px;
 }
+@media (max-width: 750px) {
+  div#header {
+    display: none;
+  }
+}
+.responsive-header {
+  display: none;
+}
+.responsive-header > img {
+  width: 100%;
+}
+@media (max-width: 750px) {
+  .responsive-header {
+    display: block;
+  }
+}
 div#joke {
-  height: 465px;
-  margin: 0px 204px 0px 187px;
   margin-bottom: 15px;
   padding-top: 4px;
   text-align: center;
+}
+@media (min-width: 751px) {
+  div#joke {
+    height: 465px;
+    margin: 0px 204px 0px 187px;
+  }
+}
+@media (max-width: 750px) {
+  div#joke img {
+    width: 78%;
+  }
 }
 div#tools {
   margin-left: 181px;
@@ -189,37 +226,6 @@ div {
 .right {
   float: right;
 }
-#comments {
-  width: 436px;
-  margin: 0px auto;
-  margin-top: 71px;
-}
-#comments #disqus_thread {
-  margin: 9px auto;
-}
-#comments #disqus_thread>#dsq-content {
-  padding-right: 55px;
-}
-#comments #disqus_thread>#dsq-content.dsq-mobile {
-  padding-right: 0px;
-  background: none !important;
-}
-#comments #disqus_thread>#dsq-content.dsq-mobile>#dsq-topwrapper {
-  display: none;
-}
-#comments #disqus_thread>#dsq-content.dsq-mobile>#dsq-comments {
-  background: none !important;
-}
-#comments * {
-  font-family: "Asap", sans-serif;
-  color: #555;
-  letter-spacing: 1px;
-  font-size: 10pt;
-  font-weight: bold;
-}
-#comments #dsq-global-toolbar {
-  display: none;
-}
 #footer {
   text-align: center;
   margin: 0px auto;
@@ -233,9 +239,6 @@ div {
   color: #111;
   text-decoration: none;
 }
-#bottom {
-  background-image: url("/i/background-loop.jpg");
-}
 body.gallery div#container {
   background-image: url("/i/background-gallery.jpg");
   background-position: 7px 0px;
@@ -246,6 +249,11 @@ div#gallery {
   width: 563px;
   overflow: hidden;
   padding-bottom: 20px;
+}
+@media (max-width: 750px) {
+  div#gallery {
+    width: 100%;
+  }
 }
 div.gallery-part {
   overflow: hidden;

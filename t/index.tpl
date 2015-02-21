@@ -14,7 +14,10 @@
 				document.write("<div style=\"opacity: 0;\">");
 			}
 		</script>
-		<a href="http://{Web::getDomain()}/" alt="{$site->getTitle()}"><div id="header">&nbsp;</div></a>
+		<a href="http://{Web::getDomain()}/" alt="{$site->getTitle()}">
+			<div id="header">&nbsp;</div>
+			<div class="responsive-header"><img src="/i/background-gallery.jpg"></div>
+		</a>
 		<div id="joke">
 		{if $next}
 			<a href="{$next->getAddress(false)}" class="softlink">
@@ -45,7 +48,6 @@
 			</div>
 		</div>
 		<div id="bottom">
-			<div id="comments">{include file="t/c/disqus.tpl"}</div>
 			<div id="footer">
 				<p><a href="http://theismadsen.dk" alt="theismadsen.dk">{$site->getTitle()} 2005 - 2012 · Tegnet af Theis Vallø Madsen</a>
 				{if Server::isDevelopment()}<br /><span style="font-weight: bold;">Udvikling</span>{/if}

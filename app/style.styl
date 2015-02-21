@@ -1,3 +1,6 @@
+sm-max-width = 750px
+md-min-width = 751px
+
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
     margin: 0;
     padding: 0;
@@ -51,29 +54,53 @@ body {
     font-family: monospace, sans
 }
 
-div#container {
+div#container
     margin: 0px auto;
-    background-image: url("/i/background.jpg");
+
+    @media (min-width: md-min-width)
+        background-image url("/i/background.jpg")
+        width 751px
+
+    @media (max-width: sm-max-width)
+        width 100%
+        background-image url("/i/background-gallery.jpg")
+        background-size contain
+        background-position no-repeat center
+
     background-repeat: no-repeat;
     box-sizing: border-box;
-    width: 751px;
+
     min-height: 1000px;
     margin-top: 10px
-}
 
-div#header {
+div#header
+    @media (max-width: sm-max-width)
+        display  none
+
     height: 155px;
     margin-bottom: 31px;
     margin-top: 0px
-}
 
-div#joke {
-    height: 465px;
-    margin: 0px 204px 0px 187px;
+.responsive-header
+    > img
+        width 100%
+
+    display none
+    @media (max-width: sm-max-width)
+        display block
+
+div#joke
+    @media (min-width: md-min-width)
+        height 465px
+        margin: 0px 204px 0px 187px;
+
+    @media (max-width: sm-max-width)
+        img
+            width 78%
+
     margin-bottom: 15px;
     padding-top: 4px;
     text-align: center
-}
 
 div#tools {
     margin-left: 181px;
@@ -113,45 +140,6 @@ div {
     float: right
 }
 
-#comments {
-    width: 436px;
-    margin: 0px auto;
-    margin-top: 71px
-}
-
-#comments #disqus_thread {
-    margin: 9px auto
-}
-
-#comments #disqus_thread>#dsq-content {
-    padding-right: 55px
-}
-
-#comments #disqus_thread>#dsq-content.dsq-mobile {
-    padding-right: 0px;
-    background: none !important
-}
-
-#comments #disqus_thread>#dsq-content.dsq-mobile>#dsq-topwrapper {
-    display: none
-}
-
-#comments #disqus_thread>#dsq-content.dsq-mobile>#dsq-comments {
-    background: none !important
-}
-
-#comments * {
-    font-family: "Asap",sans-serif;
-    color: #555;
-    letter-spacing: 1px;
-    font-size: 10pt;
-    font-weight: bold
-}
-
-#comments #dsq-global-toolbar {
-    display: none
-}
-
 #footer {
     text-align: center;
     margin: 0px auto;
@@ -167,22 +155,20 @@ div {
     text-decoration: none
 }
 
-#bottom {
-    background-image: url(/i/background-loop.jpg)
-}
-
 body.gallery div#container {
     background-image: url(/i/background-gallery.jpg);
     background-position: 7px 0px
 }
 
-div#gallery {
-    text-align: center;
-    margin: 0px auto;
-    width: 563px;
-    overflow: hidden;
-    padding-bottom: 20px
-}
+div#gallery
+    text-align center
+    margin 0px auto
+    width 563px
+    @media (max-width: sm-max-width)
+        width: 100%
+
+    overflow hidden
+    padding-bottom 20px
 
 div.gallery-part {
     overflow: hidden

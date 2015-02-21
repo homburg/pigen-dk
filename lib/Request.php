@@ -9,7 +9,8 @@ class Request extends Singleton {
 	 */
 	public function isMobile ()
 	{
-		return 1 === preg_match('/^m\./', Server::getHttpHost());
+		return false;
+		# return 1 === preg_match('/^m\./', Server::getHttpHost());
 	}
 
 	public function getGet ()

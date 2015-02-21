@@ -37,11 +37,11 @@
     function Panel() {}
 
     Panel.init = function() {
-      var fragment, name, selector, _i, _len, _ref;
+      var fragment, j, len, name, ref, selector;
       if (l.hash !== "") {
-        _ref = Panel.loadContainers;
-        for (selector = _i = 0, _len = _ref.length; _i < _len; selector = ++_i) {
-          name = _ref[selector];
+        ref = Panel.loadContainers;
+        for (selector = j = 0, len = ref.length; j < len; selector = ++j) {
+          name = ref[selector];
           $("#" + name).hide();
         }
       }
