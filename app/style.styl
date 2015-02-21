@@ -60,18 +60,19 @@ div#container
     @media (min-width: md-min-width)
         background-image url("/i/background.jpg")
         width 751px
+        margin-top 10px
 
     @media (max-width: sm-max-width)
         width 100%
         background-image url("/i/background-gallery.jpg")
         background-size contain
         background-position no-repeat center
+        margin-top 0px
 
     background-repeat: no-repeat;
     box-sizing: border-box;
 
     min-height: 1000px;
-    margin-top: 10px
 
 div#header
     @media (max-width: sm-max-width)
@@ -92,20 +93,22 @@ div#header
 div#joke
     @media (min-width: md-min-width)
         height 465px
-        margin: 0px 204px 0px 187px;
+        margin 0px 204px 0px 187px
+        padding-top 4px
 
     @media (max-width: sm-max-width)
+        padding-top 0px
         img
             width 78%
 
     margin-bottom: 15px;
-    padding-top: 4px;
     text-align: center
 
 div#tools
     .links
         margin-top 13px
         margin-bottom 13px
+
         table
             width 100%
             td:nth-child(1)

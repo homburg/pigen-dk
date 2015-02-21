@@ -143,12 +143,12 @@ div#container {
   background-repeat: no-repeat;
   box-sizing: border-box;
   min-height: 1000px;
-  margin-top: 10px;
 }
 @media (min-width: 751px) {
   div#container {
     background-image: url("/i/background.jpg");
     width: 751px;
+    margin-top: 10px;
   }
 }
 @media (max-width: 750px) {
@@ -157,6 +157,7 @@ div#container {
     background-image: url("/i/background-gallery.jpg");
     background-size: contain;
     background-position: no-repeat center;
+    margin-top: 0px;
   }
 }
 div#header {
@@ -182,16 +183,19 @@ div#header {
 }
 div#joke {
   margin-bottom: 15px;
-  padding-top: 4px;
   text-align: center;
 }
 @media (min-width: 751px) {
   div#joke {
     height: 465px;
     margin: 0px 204px 0px 187px;
+    padding-top: 4px;
   }
 }
 @media (max-width: 750px) {
+  div#joke {
+    padding-top: 0px;
+  }
   div#joke img {
     width: 78%;
   }
