@@ -91,8 +91,7 @@
           }
           $("#load-container").fadeIn();
           domain = window.Web.domain;
-          console.log("link:http://" + domain + "/" + id);
-          return window.d.reload("http://" + domain + "/" + id);
+          return console.log("link:http://" + domain + "/" + id);
         });
       });
     };

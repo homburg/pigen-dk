@@ -197,11 +197,28 @@ div#joke {
   }
 }
 div#tools {
+  margin-top: 20px;
   margin-left: 181px;
   margin-right: 197px;
   height: 100%;
   padding-top: 8px;
   overflow: hidden;
+}
+div#tools .links {
+  margin-top: 13px;
+  margin-bottom: 13px;
+}
+div#tools .links table {
+  width: 100%;
+}
+div#tools .links table td:nth-child(1) {
+  text-align: left;
+}
+div#tools .links table td:nth-child(2) {
+  text-align: center;
+}
+div#tools .links table td:nth-child(3) {
+  text-align: right;
 }
 div#tools>#navigation {
   text-align: center;
