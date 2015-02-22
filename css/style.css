@@ -154,9 +154,6 @@ div#container {
 @media (max-width: 750px) {
   div#container {
     width: 100%;
-    background-image: url("/i/background-gallery.jpg");
-    background-size: contain;
-    background-position: no-repeat center;
     margin-top: 0px;
   }
 }
@@ -174,10 +171,12 @@ div#header {
   width: 100%;
 }
 .responsive-header {
+  text-align: center;
   display: none;
 }
 .responsive-header > img {
   width: 100%;
+  max-width: 667px;
 }
 @media (max-width: 750px) {
   .responsive-header {
@@ -201,6 +200,7 @@ div#joke {
   }
   div#joke img {
     width: 98%;
+    max-width: 530px;
   }
 }
 div#tools {

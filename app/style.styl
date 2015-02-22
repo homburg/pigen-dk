@@ -64,9 +64,6 @@ div#container
 
     @media (max-width: sm-max-width)
         width 100%
-        background-image url("/i/background-gallery.jpg")
-        background-size contain
-        background-position no-repeat center
         margin-top 0px
 
     background-repeat: no-repeat;
@@ -87,8 +84,10 @@ div#header
         width 100%
 
 .responsive-header
+    text-align center
     > img
         width 100%
+        max-width 667px
 
     display none
     @media (max-width: sm-max-width)
@@ -104,6 +103,7 @@ div#joke
         padding-top 0px
         img
             width 98%
+            max-width 530px
 
     margin-bottom: 15px;
     text-align: center
