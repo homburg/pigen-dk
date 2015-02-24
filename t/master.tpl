@@ -9,7 +9,7 @@
 	<link rel="favicon" type="image/ico" href="/favicon.ico" />
 	<link rel="stylesheet" href="/css/screen.css" type="text/css" />
 	{block name="stylesheets_primary"}
-	<link rel="stylesheet" href="/css/style.css" type="text/css" />
+	<link rel="stylesheet" href="/css/style.css?t=20150225" type="text/css" />
 	{/block}
 	<link rel="stylesheet" href="/bower_components/jquery-ui/themes/base/all.css" type="text/css" />
 	<script type="text/javascript" src="/public/vendor.js" ></script>
