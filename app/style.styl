@@ -2,10 +2,12 @@ sm-max-width = 750px
 md-min-width = 751px
 container-width = 751px
 footer-height = 54px
+pigen-pink = #F8C5D1
 
 *
     margin 0
     padding 0
+    border 0
 
 html {
     line-height: 1
@@ -64,9 +66,14 @@ div#container
 
     @media (max-width: sm-max-width)
         width 100%
+        background-color pigen-pink
 
     background-repeat: no-repeat;
     box-sizing: border-box;
+
+#load-container
+    @media (max-width: sm-max-width)
+        background-color white
 
 div#header
     @media (max-width: sm-max-width)
@@ -94,10 +101,8 @@ div#joke
     @media (min-width: md-min-width)
         height 465px
         margin 0px 204px 0px 187px
-        padding-top 4px
 
     @media (max-width: sm-max-width)
-        padding-top 0px
         img
             width 98%
             max-width 530px
@@ -106,20 +111,20 @@ div#joke
     text-align: center
 
 div#tools
+    padding-top 17px
+
+    @media (max-width: sm-max-width)
+        background-color #F8C5D1
+
     .links
         margin-top 13px
         margin-bottom 13px
 
         table
-            width 100%
-            td:nth-child(1)
-                text-align left
-
-            td:nth-child(2)
+            width 80%
+            margin 0 auto
+            td
                 text-align center
-
-            td:nth-child(3)
-                text-align right
 
     @media (min-width: md-min-width)
         margin-top 20px
@@ -127,10 +132,8 @@ div#tools
         margin-right 197px
 
     @media (max-width: sm-max-width)
-        width 240px
-        margin 0px auto
+        width 100%
 
-    padding-top 8px
     overflow hidden
 
     > #navigation
@@ -144,6 +147,7 @@ div#tools
         width container-width
     @media (max-width: sm-max-width)
         width 100%
+        background-color #F8C5D1
 
 #bottom, .footer-push
     height footer-height
@@ -169,8 +173,6 @@ div {
     text-align: center;
     margin: 0px auto;
     padding-right: 21px;
-    padding-top: 10px;
-    padding-bottom: 20px
 }
 
 #footer * {

@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  border: 0;
 }
 html {
   line-height: 1;
@@ -74,6 +75,12 @@ div#container {
 @media (max-width: 750px) {
   div#container {
     width: 100%;
+    background-color: #f8c5d1;
+  }
+}
+@media (max-width: 750px) {
+  #load-container {
+    background-color: #fff;
   }
 }
 div#header {
@@ -110,37 +117,33 @@ div#joke {
   div#joke {
     height: 465px;
     margin: 0px 204px 0px 187px;
-    padding-top: 4px;
   }
 }
 @media (max-width: 750px) {
-  div#joke {
-    padding-top: 0px;
-  }
   div#joke img {
     width: 98%;
     max-width: 530px;
   }
 }
 div#tools {
-  padding-top: 8px;
+  padding-top: 17px;
   overflow: hidden;
+}
+@media (max-width: 750px) {
+  div#tools {
+    background-color: #f8c5d1;
+  }
 }
 div#tools .links {
   margin-top: 13px;
   margin-bottom: 13px;
 }
 div#tools .links table {
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
 }
-div#tools .links table td:nth-child(1) {
-  text-align: left;
-}
-div#tools .links table td:nth-child(2) {
+div#tools .links table td {
   text-align: center;
-}
-div#tools .links table td:nth-child(3) {
-  text-align: right;
 }
 @media (min-width: 751px) {
   div#tools {
@@ -151,8 +154,7 @@ div#tools .links table td:nth-child(3) {
 }
 @media (max-width: 750px) {
   div#tools {
-    width: 240px;
-    margin: 0px auto;
+    width: 100%;
   }
 }
 div#tools > #navigation {
@@ -171,6 +173,7 @@ div#tools > #navigation {
 @media (max-width: 750px) {
   #bottom {
     width: 100%;
+    background-color: #f8c5d1;
   }
 }
 #bottom,
@@ -194,8 +197,6 @@ div {
   text-align: center;
   margin: 0px auto;
   padding-right: 21px;
-  padding-top: 10px;
-  padding-bottom: 20px;
 }
 #footer * {
   font-family: "Asap", sans-serif;
