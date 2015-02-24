@@ -75,12 +75,10 @@ div#container {
 @media (max-width: 750px) {
   div#container {
     width: 100%;
-    background-color: #f8c5d1;
-  }
-}
-@media (max-width: 750px) {
-  #load-container {
-    background-color: #fff;
+    background-image: url("/i/background-loop.jpg");
+    background-repeat: repeat-y;
+    background-size: 113%;
+    background-position: center;
   }
 }
 div#header {
@@ -97,6 +95,7 @@ div#header {
   width: 100%;
 }
 .responsive-header {
+  background-color: #fff;
   text-align: center;
   display: none;
 }
@@ -120,6 +119,10 @@ div#joke {
   }
 }
 @media (max-width: 750px) {
+  div#joke {
+    padding-bottom: 13px;
+    background-color: #fff;
+  }
   div#joke img {
     width: 98%;
     max-width: 530px;
@@ -128,11 +131,6 @@ div#joke {
 div#tools {
   padding-top: 17px;
   overflow: hidden;
-}
-@media (max-width: 750px) {
-  div#tools {
-    background-color: #f8c5d1;
-  }
 }
 div#tools .links {
   margin-top: 13px;
@@ -173,7 +171,6 @@ div#tools > #navigation {
 @media (max-width: 750px) {
   #bottom {
     width: 100%;
-    background-color: #f8c5d1;
   }
 }
 #bottom,

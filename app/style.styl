@@ -66,14 +66,17 @@ div#container
 
     @media (max-width: sm-max-width)
         width 100%
-        background-color pigen-pink
+        background-image url("/i/background-loop.jpg")
+        background-repeat repeat-y
+        background-size 113%
+        background-position center
 
     background-repeat: no-repeat;
     box-sizing: border-box;
 
-#load-container
-    @media (max-width: sm-max-width)
-        background-color white
+// #load-container
+//     @media (max-width: sm-max-width)
+//         background-color white
 
 div#header
     @media (max-width: sm-max-width)
@@ -88,6 +91,7 @@ div#header
         width 100%
 
 .responsive-header
+    background-color white
     text-align center
     > img
         width 100%
@@ -103,6 +107,8 @@ div#joke
         margin 0px 204px 0px 187px
 
     @media (max-width: sm-max-width)
+        padding-bottom  13px
+        background-color white
         img
             width 98%
             max-width 530px
@@ -112,9 +118,6 @@ div#joke
 
 div#tools
     padding-top 17px
-
-    @media (max-width: sm-max-width)
-        background-color #F8C5D1
 
     .links
         margin-top 13px
@@ -147,7 +150,6 @@ div#tools
         width container-width
     @media (max-width: sm-max-width)
         width 100%
-        background-color #F8C5D1
 
 #bottom, .footer-push
     height footer-height
