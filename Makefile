@@ -42,7 +42,7 @@ panels/thumbnails/%.jpg: panels/%.jpg
 	convert $< -resize 118x -gravity Center -crop 118x118+0+0 $(patsubst panels/%,panels/thumbnails/%,$(<))
 
 panels/yaml_lock/%.yaml: panels/%.yaml
-	# scripts/fb_yaml.php $?
+	scripts/fb_yaml.php $?
 
 composer:
 	composer install --no-dev -o
