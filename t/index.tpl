@@ -16,7 +16,7 @@
 		</script>
 		<a href="http://{Web::getDomain()}/" alt="{$site->getTitle()}">
 			<div id="header">&nbsp;</div>
-			<div class="responsive-header"><img src="/i/background-gallery.jpg"></div>
+			<div class="responsive-header"><img src="/i/header-responsive.jpg"></div>
 		</a>
 		<div id="joke">
 		{if $next}
