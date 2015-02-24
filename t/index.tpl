@@ -9,8 +9,7 @@
 	<div id="load-container">
 		<script type="text/javascript">
 			// Hide joke, if dynamic address and javascript is enabled
-			if (/#\/.+/.test(document.location.hash))
-			{
+			if (/#\/.+/.test(document.location.hash)) {
 				document.write("<div style=\"opacity: 0;\">");
 			}
 		</script>
@@ -48,19 +47,24 @@
 				</table>
 			</div>
 		</div>
-		<div id="bottom">
-			<div id="footer">
-				<p><a href="http://theismadsen.dk" alt="theismadsen.dk">{$site->getTitle()} 2005 - 2015 · Tegnet af Theis Vallø Madsen</a>
-				{if Server::isDevelopment()}<br /><span style="font-weight: bold;">Udvikling</span>{/if}
-				</p>
-			</div>
-		</div>
-	<script type="text/javascript">
-		// End of hiding div
-		document.write("</div>");
-	</script>
+		<script type="text/javascript">
+			// Hide joke, if dynamic address and javascript is enabled
+			if (/#\/.+/.test(document.location.hash)) {
+				document.write("</div>");
+			}
+		</script>
 	</div> {* load-container *}
 	<script type="text/javascript" src="/public/panel.js?v={#js_timestamp#}"></script>
 	<script type="text/javascript" src="/public/nav.js?v={#js_timestamp#}"></script>
+	<div class="footer-push"></div>
+{/block}
+{block "footer"}
+	<div id="bottom">
+		<div id="footer">
+			<p><a href="http://theismadsen.dk" alt="theismadsen.dk">{$site->getTitle()} 2005 - 2015 · Tegnet af Theis Vallø Madsen</a>
+			{if Server::isDevelopment()}<br /><span style="font-weight: bold;">Udvikling</span>{/if}
+			</p>
+		</div>
+	</div>
 {/block}
 {* Rename to panel.tpl *}

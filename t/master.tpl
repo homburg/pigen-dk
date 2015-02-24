@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	{block name="head"}
@@ -23,5 +23,7 @@
 		{$debug|default:'debug!'|var_export nofilter}
 	{/block}
 	</div> <!-- end container -->
+	{block name="footer"}
+	{/block}
 </body>
 </html>

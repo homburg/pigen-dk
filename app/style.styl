@@ -1,14 +1,11 @@
 sm-max-width = 750px
 md-min-width = 751px
+container-width = 751px
+footer-height = 54px
 
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font: inherit;
-    font-size: 100%;
-    vertical-align: baseline
-}
+*
+    margin 0
+    padding 0
 
 html {
     line-height: 1
@@ -50,26 +47,26 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,su
     display: none
 }
 
+body, html
+    height 100%
+    min-height 100%
+
 body {
     font-family: monospace, sans
 }
 
 div#container
-    margin: 0px auto;
-
+    min-height 100%
+    margin 0px auto (-1 * footer-height)
     @media (min-width: md-min-width)
         background-image url("/i/background.jpg")
-        width 751px
-        margin-top 10px
+        width container-width
 
     @media (max-width: sm-max-width)
         width 100%
-        margin-top 0px
 
     background-repeat: no-repeat;
     box-sizing: border-box;
-
-    min-height: 1000px;
 
 div#header
     @media (max-width: sm-max-width)
@@ -133,22 +130,23 @@ div#tools
         width 240px
         margin 0px auto
 
-    height 100%
     padding-top 8px
     overflow hidden
 
-div#tools>#navigation {
-    text-align: center;
-    margin: 0px auto
-}
+    > #navigation
+        text-align center
+        margin 0px auto
 
-div#tools #share-left>div {
-    text-align: left
-}
+#bottom
+    text-align center
+    margin 0 auto
+    @media (min-width: md-min-width)
+        width container-width
+    @media (max-width: sm-max-width)
+        width 100%
 
-div#tools #share-right>div {
-    text-align: right
-}
+#bottom, .footer-push
+    height footer-height
 
 a {
     text-decoration: none;

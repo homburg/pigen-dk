@@ -1,90 +1,6 @@
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+* {
   margin: 0;
   padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
 }
 html {
   line-height: 1;
@@ -135,26 +51,29 @@ summary {
 .hide {
   display: none;
 }
+body,
+html {
+  height: 100%;
+  min-height: 100%;
+}
 body {
   font-family: monospace, sans;
 }
 div#container {
-  margin: 0px auto;
+  min-height: 100%;
+  margin: 0px auto -54px;
   background-repeat: no-repeat;
   box-sizing: border-box;
-  min-height: 1000px;
 }
 @media (min-width: 751px) {
   div#container {
     background-image: url("/i/background.jpg");
     width: 751px;
-    margin-top: 10px;
   }
 }
 @media (max-width: 750px) {
   div#container {
     width: 100%;
-    margin-top: 0px;
   }
 }
 div#header {
@@ -204,7 +123,6 @@ div#joke {
   }
 }
 div#tools {
-  height: 100%;
   padding-top: 8px;
   overflow: hidden;
 }
@@ -237,15 +155,27 @@ div#tools .links table td:nth-child(3) {
     margin: 0px auto;
   }
 }
-div#tools>#navigation {
+div#tools > #navigation {
   text-align: center;
   margin: 0px auto;
 }
-div#tools #share-left>div {
-  text-align: left;
+#bottom {
+  text-align: center;
+  margin: 0 auto;
 }
-div#tools #share-right>div {
-  text-align: right;
+@media (min-width: 751px) {
+  #bottom {
+    width: 751px;
+  }
+}
+@media (max-width: 750px) {
+  #bottom {
+    width: 100%;
+  }
+}
+#bottom,
+.footer-push {
+  height: 54px;
 }
 a {
   text-decoration: none;
