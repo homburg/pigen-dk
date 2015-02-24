@@ -50,7 +50,7 @@
 		</div>
 		<div id="bottom">
 			<div id="footer">
-				<p><a href="http://theismadsen.dk" alt="theismadsen.dk">{$site->getTitle()} 2005 - 2012 · Tegnet af Theis Vallø Madsen</a>
+				<p><a href="http://theismadsen.dk" alt="theismadsen.dk">{$site->getTitle()} 2005 - 2015 · Tegnet af Theis Vallø Madsen</a>
 				{if Server::isDevelopment()}<br /><span style="font-weight: bold;">Udvikling</span>{/if}
 				</p>
 			</div>
