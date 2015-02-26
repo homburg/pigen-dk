@@ -59,25 +59,22 @@ class Panel
     l.hash = ""
     l.hash = fragment
 
-  @fadeTo: (uri) ->
-    $("#joke img")
-      .fadeOut null, ->
-        i = $(this)
-        i.attr "src", "/panels/#{uri}.jpg"
-        i.fadeIn "slow"
-
   # TODO: 404?
   @load: (id) ->
-    $("#load-container").fadeOut null, ->
-      $("#load-container").load "/#{id} #load-container > *", (responseText, textStatus) ->
-        # TODO: event pattern
-        _gaq.push ['_trackPageview', "/#{id}"] if _gaq?
-        m = responseText.match(/<title>(.*)<\/title>/m)
-        document.title = m[1] if m?.length == 2
-        $("#load-container").fadeIn()
-        # Disqus
-        domain = window.Web.domain
-        console.log "link:http://#{domain}/#{id}"
+    $("#load-container").velocity(
+      {opacity: 0}
+      {
+        complete: ->
+          $("#load-container").load "/#{id} #load-container > *", (responseText, textStatus) ->
+            # TODO: event pattern
+            _gaq.push ['_trackPageview', "/#{id}"] if _gaq?
+            m = responseText.match(/<title>(.*)<\/title>/m)
+            document.title = m[1] if m?.length == 2
+            $("#load-container").velocity({opacity: 1})
+            domain = window.Web.domain
+            console.log "link:http://#{domain}/#{id}"
+      }
+    )
 
   @loadContainers: {"load-container": "load-container", }
 

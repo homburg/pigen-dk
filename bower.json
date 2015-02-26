@@ -19,7 +19,8 @@
     "jquery-ui": "~1.11.0",
     "jquery.bbq": "~1.2.1",
     "jquery.browser": "~0.0.6",
-    "jquery-infinite-scroll": "~2.1.0"
+    "jquery-infinite-scroll": "~2.1.0",
+    "velocity": "~1.2.2"
   },
   "overrides": {
     "jquery.bbq": {
