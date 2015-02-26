@@ -2,6 +2,7 @@ sm-max-width = 750px
 md-min-width = 751px
 container-width = 751px
 footer-height = 54px
+footer-margin-top = 180px
 pigen-pink = #F8C5D1
 
 *
@@ -148,10 +149,14 @@ div#tools
     margin 0 auto
     @media (min-width: md-min-width)
         width container-width
+
     @media (max-width: sm-max-width)
         width 100%
 
-#bottom, .footer-push
+.footer-push
+    height footer-height + footer-margin-top
+
+#bottom
     height footer-height
 
 a {
@@ -171,11 +176,10 @@ div {
     float: right
 }
 
-#footer {
-    text-align: center;
-    margin: 0px auto;
-    padding-right: 21px;
-}
+#footer
+    text-align center
+    padding-right 21px
+    margin 0px auto
 
 #footer * {
     font-family: "Asap",sans-serif;

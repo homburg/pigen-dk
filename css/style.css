@@ -173,8 +173,10 @@ div#tools > #navigation {
     width: 100%;
   }
 }
-#bottom,
 .footer-push {
+  height: 234px;
+}
+#bottom {
   height: 54px;
 }
 a {
@@ -192,8 +194,8 @@ div {
 }
 #footer {
   text-align: center;
-  margin: 0px auto;
   padding-right: 21px;
+  margin: 0px auto;
 }
 #footer * {
   font-family: "Asap", sans-serif;
