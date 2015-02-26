@@ -75,10 +75,10 @@ div#container {
 @media (max-width: 750px) {
   div#container {
     width: 100%;
-    background-image: url("/i/background-loop.jpg");
+    background-image: url("/i/bottom-responsive-loop.jpg");
     background-repeat: repeat-y;
-    background-size: 113%;
     background-position: center;
+    background-size: 100%;
   }
 }
 div#header {
@@ -109,13 +109,13 @@ div#header {
   }
 }
 div#joke {
-  margin-bottom: 15px;
   text-align: center;
 }
 @media (min-width: 751px) {
   div#joke {
     height: 465px;
     margin: 0px 204px 0px 187px;
+    margin-bottom: 15px;
   }
 }
 @media (max-width: 750px) {
@@ -152,6 +152,9 @@ div#tools .links table td {
 }
 @media (max-width: 750px) {
   div#tools {
+    background-image: url("/i/bottom-responsive.jpg");
+    background-position: top center;
+    background-size: 100% auto;
     width: 100%;
   }
 }

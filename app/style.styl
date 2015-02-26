@@ -67,13 +67,13 @@ div#container
 
     @media (max-width: sm-max-width)
         width 100%
-        background-image url("/i/background-loop.jpg")
+        background-image url("/i/bottom-responsive-loop.jpg")
         background-repeat repeat-y
-        background-size 113%
         background-position center
+        background-size 100%
 
-    background-repeat: no-repeat;
-    box-sizing: border-box;
+    background-repeat no-repeat
+    box-sizing: border-box
 
 // #load-container
 //     @media (max-width: sm-max-width)
@@ -106,16 +106,16 @@ div#joke
     @media (min-width: md-min-width)
         height 465px
         margin 0px 204px 0px 187px
+        margin-bottom 15px
 
     @media (max-width: sm-max-width)
-        padding-bottom  13px
+        padding-bottom 13px
         background-color white
         img
             width 98%
             max-width 530px
 
-    margin-bottom: 15px;
-    text-align: center
+    text-align center
 
 div#tools
     padding-top 17px
@@ -136,6 +136,9 @@ div#tools
         margin-right 197px
 
     @media (max-width: sm-max-width)
+        background-image url("/i/bottom-responsive.jpg")
+        background-position top center
+        background-size 100% auto
         width 100%
 
     overflow hidden
