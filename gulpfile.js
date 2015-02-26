@@ -7,7 +7,7 @@ gulp.task("default", function () {
 	.pipe($.stylus())
 	.pipe(gulp.dest("css"));
 
-	gulp.src(mainBowerFiles())
+	gulp.src(mainBowerFiles().concat(["app/lib/*.js"]))
 	.pipe($.concat("vendor.js"))
 	.pipe(gulp.dest("public"));
 

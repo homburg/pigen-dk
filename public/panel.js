@@ -61,6 +61,14 @@
           return Panel.load();
         }
       });
+      $(document).on("swipe", "#joke img", function(e) {
+        switch (e.direction) {
+          case "left":
+            return $("#next").trigger("click");
+          case "right":
+            return $("#prev").trigger("click");
+        }
+      });
       if (l.hash === "") {
         return;
       }
