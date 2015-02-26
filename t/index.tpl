@@ -6,6 +6,11 @@
 	<meta property="og:type" content="article" />
 {/block}
 {block "content"}
+	<div>
+		<a href="http://{Web::getDomain()}/" alt="{$site->getTitle()}">
+			<div class="responsive-header"><img src="/i/header-responsive.jpg"></div>
+		</a>
+	</div>
 	<div id="load-container">
 		<script type="text/javascript">
 			// Hide joke, if dynamic address and javascript is enabled
@@ -15,7 +20,6 @@
 		</script>
 		<a href="http://{Web::getDomain()}/" alt="{$site->getTitle()}">
 			<div id="header">&nbsp;</div>
-			<div class="responsive-header"><img src="/i/header-responsive.jpg"></div>
 		</a>
 		<div id="joke">
 		{if $next}
