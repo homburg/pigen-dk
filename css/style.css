@@ -206,11 +206,10 @@ div {
   color: #111;
   text-decoration: none;
 }
-body.gallery div#container {
-  background-image: url("/i/background-gallery.jpg");
-  background-position: 7px 0px;
+body.gallery #container {
+  background: none;
 }
-div#gallery {
+#gallery {
   text-align: center;
   margin: 0px auto;
   width: 563px;
@@ -218,17 +217,17 @@ div#gallery {
   padding-bottom: 20px;
 }
 @media (max-width: 629px) {
-  div#gallery {
+  #gallery {
     width: 423px;
   }
 }
 @media (max-width: 460px) {
-  div#gallery {
+  #gallery {
     width: 281px;
   }
 }
 @media (max-width: 296px) {
-  div#gallery {
+  #gallery {
     width: 100%;
   }
 }
