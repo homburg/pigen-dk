@@ -213,6 +213,19 @@ class Panel
 
 		try {
 			$data = $yaml->parse(file_get_contents($dataFilename));
+			if (is_array($data)) {
+				$bomCleanedData = array();
+				foreach ($data as $key => $value) {
+					$cleanedKey = $key;
+					if (0 === strncmp($key, "\xEF\xBB\xBF", 3)) {
+						$cleanedKey = substr($key, 3);
+					}
+
+					$bomCleanedData[$cleanedKey] = $value;
+				}
+
+				$data = $bomCleanedData;
+			}
 		} catch (ParseException $pe) {
 			Debug::log(sprintf(
 				'Error parsing image data from file: "%s": %s',
