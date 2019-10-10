@@ -2,7 +2,7 @@
 
 class Web
 {
-	const REDIRECT_TEMPORARY = 302;
+	const REDIRECT_TEMPORARY = 307;
 	const REDIRECT_PERMANENT = 301;
 
 	const DOMAIN_TYPE_AUTO = 'auto';

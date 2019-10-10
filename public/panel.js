@@ -37,7 +37,7 @@
     function Panel() {}
 
     Panel.init = function() {
-      var fragment, i, len, name, ref, selector;
+      var fragment, hash_history, history, i, initial_path, len, name, ref, selector;
       if (l.hash !== "") {
         ref = Panel.loadContainers;
         for (selector = i = 0, len = ref.length; i < len; selector = ++i) {
@@ -45,21 +45,41 @@
           $("#" + name).hide();
         }
       }
+      history = window.History.createHistory();
+      initial_path = document.location.pathname;
+      history.listen(function(loc) {
+        var path;
+        path = loc.pathname;
+        if (path === initial_path) {
+          return;
+        } else {
+          initial_path = null;
+        }
+        if (path !== "/") {
+          Panel.load(path.slice(1));
+        } else {
+          Panel.load();
+        }
+        return false;
+      });
+      hash_history = window.History.createHashHistory({
+        queryKey: false
+      });
+      hash_history.listen(function(loc) {
+        if (loc.pathname !== "/") {
+          return history.replace({
+            pathname: loc.pathname.toUpperCase()
+          });
+        }
+      });
       $(document).on("click", "a.softlink", function(event) {
         var id;
         id = $(this).attr('href').replace(/.*\//, "");
-        l.href = "/#/" + id;
+        history.push({
+          pathname: "/" + id
+        });
         event.preventDefault();
         return false;
-      });
-      $(window).bind('hashchange', function(e) {
-        var fragment;
-        fragment = $.param.fragment();
-        if (l.hash !== "") {
-          return Panel.load(fragment.slice(1));
-        } else {
-          return Panel.load();
-        }
       });
       $(document).on("swipe", "#joke img", function(e) {
         switch (e.direction) {

@@ -19,6 +19,13 @@ return array(
     'Symfony\\Component\\Yaml\\Exception\\RuntimeException' => $vendorDir . '/symfony/yaml/Symfony/Component/Yaml/Exception/RuntimeException.php',
     'Symfony\\Component\\Yaml\\Inline' => $vendorDir . '/symfony/yaml/Symfony/Component/Yaml/Inline.php',
     'Symfony\\Component\\Yaml\\Parser' => $vendorDir . '/symfony/yaml/Symfony/Component/Yaml/Parser.php',
+    'Symfony\\Component\\Yaml\\Tests\\A' => $vendorDir . '/symfony/yaml/Symfony/Component/Yaml/Tests/DumperTest.php',
+    'Symfony\\Component\\Yaml\\Tests\\B' => $vendorDir . '/symfony/yaml/Symfony/Component/Yaml/Tests/ParserTest.php',
+    'Symfony\\Component\\Yaml\\Tests\\DumperTest' => $vendorDir . '/symfony/yaml/Symfony/Component/Yaml/Tests/DumperTest.php',
+    'Symfony\\Component\\Yaml\\Tests\\InlineTest' => $vendorDir . '/symfony/yaml/Symfony/Component/Yaml/Tests/InlineTest.php',
+    'Symfony\\Component\\Yaml\\Tests\\ParseExceptionTest' => $vendorDir . '/symfony/yaml/Symfony/Component/Yaml/Tests/ParseExceptionTest.php',
+    'Symfony\\Component\\Yaml\\Tests\\ParserTest' => $vendorDir . '/symfony/yaml/Symfony/Component/Yaml/Tests/ParserTest.php',
+    'Symfony\\Component\\Yaml\\Tests\\YamlTest' => $vendorDir . '/symfony/yaml/Symfony/Component/Yaml/Tests/YamlTest.php',
     'Symfony\\Component\\Yaml\\Unescaper' => $vendorDir . '/symfony/yaml/Symfony/Component/Yaml/Unescaper.php',
     'Symfony\\Component\\Yaml\\Yaml' => $vendorDir . '/symfony/yaml/Symfony/Component/Yaml/Yaml.php',
 );

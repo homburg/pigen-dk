@@ -40,11 +40,18 @@ class FbCurler {
 		}
 
 		$out = "";
-		foreach ($domains as $domain) {
-			$url  = "http://${domain}/${id}";
-			$fbUrl = 'http://developers.facebook.com/tools/debug/og/object?format=json&q='.rawurlencode($url);
-			shell_exec("logger Getting: ${fbUrl}\n");
-			$out = file_get_contents($fbUrl);
+
+		$ids = array($id, substr($id, 0, 1) . strtolower(substr($id, 1)));
+		foreach ($ids as $id) {
+			foreach ($domains as $domain) {
+				$urls  = array("https://${domain}/${id}", "https://${domain}/#/${id}");
+				foreach ($urls as $url) {
+					$fbUrl = 'http://developers.facebook.com/tools/debug/og/object?format=json&q='.rawurlencode($url);
+					shell_exec("logger Getting: ${fbUrl}\n");
+					echo $fbUrl;
+					$out = file_get_contents($fbUrl);
+				}
+			}
 		}
 
 		file_put_contents($outDir.'/'.$file, $out);

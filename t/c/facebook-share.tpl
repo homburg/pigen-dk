@@ -1,1 +1,1 @@
-<a target="_blank" href="http://www.facebook.com/sharer.php?u={$p->getAddress(true, Web::DOMAIN_TYPE_DESKTOP)|escape:"url"}&t={$p->getTitle(true)}"><img alt="Del på facebook" src="/i/facebook-share.gif" /></a>
+<a target="_blank" href="http://www.facebook.com/sharer.php?u={$p->getAddress(true, Web::DOMAIN_TYPE_DESKTOP)|escape:"url"}&t={$p->getTitle(true)}"><img alt="Del på facebook" src="/panels/assets/facebookknap-x.png" class="hidpi"/></a>

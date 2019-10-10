@@ -9,11 +9,7 @@
     Nav.KEY_RIGHT = 39;
 
     Nav.bind = function() {
-      if ($.browser.msie) {
-        return $(document).keydown(Nav._keydown);
-      } else {
-        return $(window).keydown(Nav._keydown);
-      }
+      return $(window).keydown(Nav._keydown);
     };
 
     Nav._keydown = function(e) {

@@ -60,6 +60,9 @@ html {
 body {
   font-family: monospace, sans;
 }
+img.hidpi {
+  transform: scale(0.5);
+}
 div#container {
   min-height: 100%;
   margin: 0px auto -54px;
@@ -68,7 +71,8 @@ div#container {
 }
 @media (min-width: 751px) {
   div#container {
-    background-image: url("/i/background.jpg");
+    background-image: url("/panels/assets/background-x.jpg");
+    background-size: 100%;
     width: 751px;
   }
 }
@@ -117,6 +121,10 @@ div#joke {
     margin: 0px 204px 0px 187px;
     margin-bottom: 15px;
   }
+  div#joke img {
+    width: 350px;
+    height: 450px;
+  }
 }
 @media (max-width: 750px) {
   div#joke {
@@ -161,6 +169,9 @@ div#tools .links table td {
 div#tools > #navigation {
   text-align: center;
   margin: 0px auto;
+}
+div#tools a {
+  display: inline-block;
 }
 #bottom {
   text-align: center;
@@ -240,6 +251,10 @@ div.gallery-item {
   margin: 5px;
   float: left;
   background: #fff;
+}
+div.gallery-item img {
+  width: 118px;
+  height: 118px;
 }
 body.gallery div#header {
   height: 155px;

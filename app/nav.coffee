@@ -3,10 +3,7 @@ class Nav
 	@KEY_RIGHT: 39
 
 	@bind: ->
-		if $.browser.msie
-			$(document).keydown(Nav._keydown)
-		else
-			$(window).keydown(Nav._keydown)
+    $(window).keydown(Nav._keydown)
 
 	@_keydown: (e) ->
 		return if $(e.target).is("textarea,input,select")

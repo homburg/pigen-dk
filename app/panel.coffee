@@ -33,19 +33,37 @@ class Panel
       for name, selector in Panel.loadContainers
         $("##{name}").hide()
 
+    history = window.History.createHistory()
+    initial_path = document.location.pathname
+
+    history.listen (loc) ->
+      path = loc.pathname
+
+      if path == initial_path
+        return
+      else
+        initial_path = null
+
+      if path != "/"
+        Panel.load path[1..]
+      else
+        Panel.load()
+      false
+
+    hash_history = window.History.createHashHistory({ queryKey: false })
+    hash_history.listen (loc) ->
+      if loc.pathname != "/"
+        history.replace({ pathname: loc.pathname.toUpperCase() })
+
+
     # Overloading default navigation link
     $(document).on "click", "a.softlink", (event) ->
       id = $(this).attr('href').replace /.*\//,""
-      l.href = "/#/#{id}"
+      history.push({
+        pathname: "/#{id}"
+      })
       event.preventDefault()
       false
-
-    $(window).bind 'hashchange', (e) ->
-      fragment = $.param.fragment()
-      if l.hash != ""
-        Panel.load fragment[1..]
-      else
-        Panel.load()
 
     $(document).on "swipe", "#joke img", (e) ->
       switch e.direction

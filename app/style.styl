@@ -58,11 +58,15 @@ body {
     font-family: monospace, sans
 }
 
+img.hidpi
+	transform scale(0.5)
+
 div#container
     min-height 100%
     margin 0px auto (-1 * footer-height)
     @media (min-width: md-min-width)
-        background-image url("/i/background.jpg")
+        background-image url("/panels/assets/background-x.jpg")
+        background-size 100%
         width container-width
 
     @media (max-width: sm-max-width)
@@ -107,6 +111,9 @@ div#joke
         height 465px
         margin 0px 204px 0px 187px
         margin-bottom 15px
+        img
+          width 350px
+          height 450px
 
     @media (max-width: sm-max-width)
         padding-bottom 13px
@@ -146,6 +153,8 @@ div#tools
     > #navigation
         text-align center
         margin 0px auto
+				a
+					display inline-block
 
 #bottom
     text-align center
@@ -214,18 +223,19 @@ body.gallery #container
 div.gallery-part
     overflow: hidden
 
-div.gallery-item {
-    padding: 5px;
-    border: solid 1px gray;
-    margin: 5px;
-    float: left;
-    background: white
-}
+div.gallery-item
+    padding 5px
+    border solid 1px gray
+    margin 5px
+    float left
+    background white
 
-body.gallery div#header {
-    height: 155px
-}
+    img
+      width 118px
+      height 118px
 
-body.gallery div#container {
-    min-height: 1000px
-}
+body.gallery div#header
+    height 155px
+
+body.gallery div#container
+    min-height 1000px

@@ -25,7 +25,7 @@ class Server
 	}
 
 	/**
-	 * @param bool $noGetParameters Do not include get parameters
+	 * @param bool $getParameters Include get parameters.
 	 */
 	public static function getUri ($getParameters = true)
 	{

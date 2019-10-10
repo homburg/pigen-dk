@@ -2,13 +2,15 @@
 {block name="head" append}
 	<meta property="og:title" content="{$p->getTitle(true)}" />
 	<meta property="og:image" content="{$p->getUri(true, Web::DOMAIN_TYPE_DESKTOP)}" />
+	<meta property="og:image:width" content="700" />
+	<meta property="og:image:height" content="900" />
 	<meta property="og:url" content="{$p->getAddress(true, Web::DOMAIN_TYPE_DESKTOP)}" />
 	<meta property="og:type" content="article" />
 {/block}
 {block "content"}
 	<div>
 		<a href="http://{Web::getDomain()}/" alt="{$site->getTitle()}">
-			<div class="responsive-header"><img src="/i/header-responsive.jpg"></div>
+			<div class="responsive-header"><img src="/panels/assets/header-respnsive-x.jpg"></div>
 		</a>
 	</div>
 	<div id="load-container">
@@ -33,11 +35,11 @@
 		<div id="tools">
 			<div id="navigation">
 				{if $previous}
-				<a id="prev" href="{$previous->getAddress(false)}" class="softlink"><img alt="forrige" src="/i/left.png" /></a>
+				<a id="prev" href="{$previous->getAddress(false)}" class="softlink"><img alt="forrige" class="hidpi" src="/panels/assets/PIL-02-x.png" /></a>
 				<img src="{$previous->getUri()}" style="display:none;" />
 				{/if}
 				{if $next}
-				<a id="next" href="{$next->getAddress(false)}" class="softlink"><img alt="næste" src="/i/right.png" /></a>
+				<a id="next" href="{$next->getAddress(false)}" class="softlink"><img alt="næste"class="hidpi"  src="/panels/assets/PIL-01-x.png" /></a>
 				<img src="{$next->getUri()}" style="display:none;"/>
 				{/if}
 			</div>
@@ -45,8 +47,7 @@
 				<table>
 					<tr>
 						<td><div id="facebook-share">{include file="t/c/facebook-share.tpl"}</div></td>
-						<td><div id="twitter-share">{include file="t/c/twitter-share.tpl"}</div></td>
-						<td><div id="gallery-link"><a href="/galleri" alt="galleri"><img src="/i/gallery.gif" alt="galleri" /></a></div></td>
+						<td><div id="gallery-link"><a href="/galleri" alt="galleri"><img src="/panels/assets/galleriknap-x.png" class="hidpi" alt="galleri" /></a></div></td>
 					</tr>
 				</table>
 			</div>

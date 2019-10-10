@@ -39,7 +39,7 @@ js-timestamp:
 	$(MAKE) js-timestamp
 
 panels/thumbnails/%.jpg: panels/%.jpg
-	convert $< -resize 118x -gravity Center -crop 118x118+0+0 $(patsubst panels/%,panels/thumbnails/%,$(<))
+	convert $< -resize 236x -gravity Center -crop 236x236+0+0 $(patsubst panels/%,panels/thumbnails/%,$(<))
 
 panels/yaml_lock/%.yaml: panels/%.yaml
 	scripts/fb_yaml.php $?
@@ -52,3 +52,10 @@ run:
 
 nginx_docker:
 	docker run -d --net=host -v $(PWD):/app -v $(PWD)/sites-enabled:/etc/nginx/sites-enabled dockerfile/nginx
+
+cache_purge:
+	curl -X DELETE "https://api.cloudflare.com/client/v4/zones/d02c085ddece425bf5985c2f51645423/purge_cache" \
+		-H "X-Auth-Email: $(CLOUDFLARE_EMAIL)" \
+		-H "X-Auth-Key: $(CLOUDFLARE_API_KEY)" \
+		-H "Content-Type: application/json" \
+		--data '{"purge_everything":true}'

@@ -91,7 +91,7 @@ class Panel
 				return $matches['id'];
 			}, $filenames);
 
-			sort(self::$list);
+			natcasesort(self::$list);
 		}
 
 		if ($order === self::ORDER_DESC)
@@ -257,7 +257,7 @@ class Panel
 		if (!$full)
 			return '/'.$this->id;
 		else
-			return 'http://'.Web::getDomain($domainType).'/'.$this->id;
+			return 'https://'.Web::getDomain($domainType).'/'.$this->id;
 	}
 
 	/**
@@ -268,7 +268,7 @@ class Panel
 		if (!$full)
 			return self::BASENAME . $this->getFilename();
 		else
-			return 'http://'.Web::getDomain($domainType).self::BASENAME.$this->getFilename();
+			return 'https://'.Web::getDomain($domainType).self::BASENAME.$this->getFilename();
 	}
 
 	public function getMobileUri ($full = false)
@@ -276,6 +276,6 @@ class Panel
 		if (!$full)
 			return self::BASENAME_MOBILE . $this->getFilename();
 		else
-			return 'http://'.Web::getDomain().self::BASENAME_MOBILE.$this->getFilename();
+			return 'https://'.Web::getDomain().self::BASENAME_MOBILE.$this->getFilename();
 	}
 }
